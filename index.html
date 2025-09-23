@@ -15,11 +15,21 @@
             <label for="theme-toggle" class="toggle-switch"></label>
         </div>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  
+  <!-- Dropdown wrapper -->
+  <div class="dropdown">
+    <a>Projects ▼</a>
+    <div class="drop-down">
+      <a href="webdesigning.html">Web Design</a>
+      <a href="cybersecurity.html">Cybersecurity</a>
+    </div>
+  </div>
+  
+  <a href="#contact">Contact</a>
+</nav>
+
     </header>
 
     <section class="main-home">
@@ -131,11 +141,27 @@
         </div>
     </section>
 <section id="projects">
-  <a href="webdesigning.html" class="project-link" rel="noopener" target="_blank">
+  <a href="webdesigning.html" id="webdesigning" class="project-link" rel="noopener">
   <div class="project-box websites">
     <span class="project-number">>>click me</span>
-    <h2>Web Designing</h2>
+    <h3>Web Designing</h3>
     <p class="project-description">Explore my web design projects that showcase my skills and creativity.</p>
+  </div>
+  </a>
+  <a href="cybersecurity.html" class="project-link" id="cybersecurity" rel="noopener">
+  <div class="project-box websites">
+    <span class="project-number">>>click me</span>
+    <h3>Cybersecurity</h3>
+    <p class="project-description">Explore my cybersecurity background and projects that showcase my skills and creativity. Coming soon...</p>
+  </div>
+  </a>
+  <a href="java.html" class="project-link" id="java" rel="noopener">
+  <div class="project-box websites">
+    <span class="project-number">>>click me</span>
+    <h3>Java</h3>
+    <p class="project-description">Explore my Java app projects.
+      coming soon...
+    </p>
   </div>
   </a>
 
@@ -195,6 +221,6 @@
           <p>© 2025 Madalitso Newton Kalulu. All rights reserved.</p>
         </footer>
         
-    <script src="/scripts/script.js"></script>
+    <script src="/scripts/main.js"></script>
 </body>
 </html>

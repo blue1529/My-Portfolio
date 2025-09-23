@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'Marvin Visions';
+    src: url('fonts/MarvinVisions.woff2') format('woff2'),url('fonts/MarvinVisions.woff') format('woff');
+}
 /* Color Variables 
     text
     background
@@ -5,15 +9,8 @@
     primary
     secondary
     accent */
+
 :root {
-    --text: #021520;
-    --background: #f5fbfff8;
-    --glass: rgba(204, 203, 203, 0.4);
-    --primary: #1894f4;
-    --secondary: #c37df9;
-    --accent: #ea43f6;
-}
-body.dark-mode {
     --text: #ddf1fd;
     --background: #00060a;
     --glass: rgba(0, 0, 0, 0.271);
@@ -87,53 +84,6 @@ header {
     align-items: center;
 }
 
-/* Toggle container */
-.toggle-container {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1000;
-}
-
-/* Hidden checkbox */
-.toggle-container input {
-    display: none;
-}
-
-/* Switch design */
-.toggle-switch {
-    width: 50px;
-    height: 26px;
-    background: var(--secondary);
-    border-radius: 50px;
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-    transition: background 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-/* The circle knob */
-.toggle-switch::after {
-    content: "";
-    width: 22px;
-    height: 22px;
-    background: var(--background);
-    border-radius: 50%;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    transition: transform 0.3s ease;
-}
-
-/* When checked (dark mode) */
-.toggle-container input:checked + .toggle-switch {
-    background: var(--primary);
-}
-
-.toggle-container input:checked + .toggle-switch::after {
-    transform: translateX(24px);
-}
 /* Sections */
 section {
     padding: 60px 20px;

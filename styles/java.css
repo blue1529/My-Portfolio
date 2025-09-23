@@ -1,0 +1,36 @@
+:root {
+  --bg-dark: #121212;
+  --card-dark: #1E1E1E;
+  --text-light: #E0E0E0;
+  --text-white: #FFFFFF;
+  --accent-red: #E76F51;
+  --accent-blue: #3B82F6;
+  --success-green: #4ADE80;
+  --muted-gray: #9CA3AF;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: 'Marvin Visions', sans-serif;
+}
+
+h1, h2, h3 {
+  color: var(--text-white);
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-red);
+}
+
+.card {
+  background-color: var(--card-dark);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
