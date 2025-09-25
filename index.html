@@ -10,26 +10,35 @@
 </head>
 <body>
     <header id="header">
-        <div class="toggle-container">
-            <input type="checkbox" id="theme-toggle"  placeholder="Toggle Theme">
-            <label for="theme-toggle" class="toggle-switch"></label>
-        </div>
+        
         <nav>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  
-  <!-- Dropdown wrapper -->
-  <div class="dropdown">
-    <a>Projects ▼</a>
-    <div class="drop-down">
-      <a href="webdesigning.html">Web Design</a>
-      <a href="cybersecurity.html">Cybersecurity</a>
-    </div>
-  </div>
-  
-  <a href="#contact">Contact</a>
-</nav>
+      <div class="logo">MyPortfolio</div>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
 
+        <div class="dropdown">
+          <a href="#">Projects ▼</a>
+          <div class="drop-down">
+            <a href="webdesigning.html">Web Design</a>
+            <a href="cybersecurity.html">Cybersecurity</a>
+            <a href="java.html">Java</a>
+          </div>
+        </div>
+
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    
+    <div class="toggle-container">
+      <input type="checkbox" id="theme-toggle"  placeholder="Toggle Theme">
+      <label for="theme-toggle" class="toggle-switch"></label>
+    </div>
+  </nav>
     </header>
 
     <section class="main-home">
@@ -71,7 +80,7 @@
       </span> 
       
     </h1>
-    <h5>| Computer Systems & Security Student | Web Developer | Ethical Hacking Enthusiast |</h5>
+    <h5 id="text" class="typing"></h5>
     <div class="intro">
       <p>
         Hi, my name is <strong>Madalitso Newton Kalulu</strong>. I am a Computer Systems and Security student with a strong passion for programming and web design, where I enjoy building functional and visually appealing solutions.
@@ -114,28 +123,64 @@
                         <p>- Completed Computer Engineering level 3 and 4<a href="https://www.abma.org.uk" class="links" rel="noopener" target="_blank" title="ABMA">(ABMA)</a></p>
                     </div>
                 </div>
-                <div class="card">
-                    <h3>My Skills</h3>
-                    <div class="skills">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>Networking basics</span>
-                        <span>Software support</span>
-                        <span>Hardware support</span>
-                    </div>
-                    <h3>My Services</h3>
-                    <div class="services">
-                        <span>Web Design</span>
-                        <span>Web Development</span>
-                        <span>Technical Support</span>
-                        <span>Web hosting</span>
-                        <span>SEO</span>
-                    </div>
-                </div>
+<div class="card">
+  
+    <h3>My Skills</h3>
+  <i class="prompt">Click buttons</i>
+  <div class="skills">
+    <div class="skill" data-percent="90">
+      <span>HTML</span>
+      <div class="bar"><div class="fill">90%</div></div>
+    </div>
+    <div class="skill" data-percent="85">
+      <span>CSS</span>
+      <div class="bar"><div class="fill">85%</div></div>
+    </div>
+    <div class="skill" data-percent="70">
+      <span>JavaScript</span>
+      <div class="bar"><div class="fill">70%</div></div>
+    </div>
+    <div class="skill" data-percent="50">
+      <span>Networking basics</span>
+      <div class="bar"><div class="fill">50%</div></div>
+    </div>
+    <div class="skill" data-percent="75">
+      <span>Hardware & Software</span>
+      <div class="bar"><div class="fill">75%</div></div>
+    </div>
+  </div>
+  <h3>My Services</h3>
+  <div class="skills">
+    
+  <div class="skill" data-percent="90">
+      <span>Web Designing</span>
+      <div class="bar"><div class="fill">90%</div></div>
+    </div>
+    <div class="skill" data-percent="90">
+      <span>Front End</span>
+      <div class="bar"><div class="fill">90%</div></div>
+    </div>
+    <div class="skill" data-percent="90">
+      <span>Web Hosting</span>
+      <div class="bar"><div class="fill">90%</div></div>
+    </div>
+    <div class="skill" data-percent="85">
+      <span title="Search Engine Optimisation">SEO</span>
+      <div class="bar"><div class="fill">85%</div></div>
+    </div>
+    <div class="skill" data-percent="75">
+      <span>Software support</span>
+      <div class="bar"><div class="fill">75%</div></div>
+    </div>
+    <div class="skill" data-percent="80">
+      <span>Hardware support</span>
+      <div class="bar"><div class="fill">80%</div></div>
+    </div>
+</div>
+</div>
                 <div class="card">
                     <h3>Interests</h3>
-                    <p>In addition to technology, I have a keen interest in music and enjoy playing various instruments.</p>
+                    <p>In addition to technology, I have a keen interest in music and enjoy playing various instruments such as the bass guitar, electric guitar, piano and the drums.</p>
                 </div>
             </div>
         </div>
