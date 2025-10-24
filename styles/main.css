@@ -18,6 +18,7 @@
     --primary: #0b86e5;
     --secondary: #4d0684;
     --accent: #b209be;
+    --text-dark: linear-gradient(90deg, #000000, #0091fffb 40%, #c271ff 50%, #ff00c8 70%);
     --websites-background: linear-gradient(130deg, #4399d3f8, #bb00ff, #ff00d4f8);
     
 }
@@ -86,12 +87,13 @@ header {
     top: 0;
     left: 0;
     right: 0;
+    height: 70px;
     z-index: 1000;
 }
 .logo {
     color: var(--primary);
     font-family: 'Marvin Visions', sans-serif;
-
+    font-size: 1.5rem;
 }
 nav {
     display: flex;
@@ -150,6 +152,9 @@ nav a {
     margin: 4px 0;
     transition: 0.4s;
 }
+.foot {
+    display: none;
+}
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -161,19 +166,49 @@ nav a {
         position: relative;
         top: 0;
     }
-    nav a {padding: 0;}
+    nav a {padding: 0; margin-left: 20px;}
+    nav a:first-of-type{ margin-top: 30px;}
     .nav-links {
         display: none;
         flex-direction: column;
         background: var(--background);
+        text-align: left;
         position: absolute;
         top: 0;
-        left: 0;
-        width: 100%;
+        right: 0;
+        width: 50%;
+        height: 112vh;
         padding: 10px 0;
+        z-index: 10000;
     }
+
     .nav-links.show {
         display: flex;
+    }
+    .foot {
+        display: block;
+        margin-top: 70vh;
+        color: var(--primary);
+        margin-left: 20px;
+        animation: bounce 3s infinite;
+
+    }
+    @keyframes bounce {
+        0% {
+    transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-30px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    70% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }        
     }
     .hamburger {
         display: flex;
@@ -226,56 +261,67 @@ nav a {
 .toggle-container input:checked + .toggle-switch::after {
     transform: translateX(24px);
 }
-
-/* Flex container */
-.main-home {
-    display: flex;
-    align-items: stretch;   /* animation fills height */
-    gap: 20px;
-}
-
-/* Left content */
-#home {
-    flex: 1;
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
     color: var(--text);
-    background-color: var(--glass);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 80px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: block;
+    z-index: 1000;
 }
-#home h3 {
-    margin-top: -15px;
-}
-#home h1 {
-    font-family: 'Marvin Visions', sans-serif;
-    margin-top: -20px;
-    margin-bottom: 10px;
+#back-to-top:hover {
+    background: var(--accent);
+    padding: 10px 15px;
+    transition: padding 0.3s ease;
 }
 
-/* Right home pic */
-.home-right {
+    /* Flex container */
+    .main-home {
+        display: flex;
+        align-items: stretch;   /* animation fills height */
+        gap: 20px;
+    }
+
+    /* Left content */
+    #home {
+        flex: 1;
+        color: var(--text);
+        background-color: var(--glass);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 80px;
+    }
+    #home h3 {
+        margin-top: -15px;
+    }
+    #home h1 {
+        font-family: 'Marvin Visions', sans-serif;
+        margin-top: -20px;
+        margin-bottom: 10px;
+    }
+
+    /* Right image with slide-in animation */
+    .home-right {
     flex: 0.5;
     border-radius: 10px;
     overflow: hidden;
-    animation: gradientShift 15s ease infinite;
-}
-.home-right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
+    }
 
-/* Gradient animation */
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+    .home-right img { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+        border-radius: 10px; }
 
 
 /* Responsive: hide animation on smaller screens */

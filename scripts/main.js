@@ -1,3 +1,6 @@
+
+
+//Themes
 const toggle = document.getElementById("theme-toggle");
 const body = document.body;
 
@@ -17,13 +20,22 @@ toggle.addEventListener("change", () => {
   }
 });
 
-//hamburger
 const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
+const navLinks = document.getElementById('navLinks');
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
+// Toggle menu on hamburger click
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation(); // prevent the click from bubbling to window
+  navLinks.classList.toggle('show');
+});
+
+// Hide menu when clicking anywhere else
+window.addEventListener('click', (e) => {
+  // if click is NOT inside navLinks or hamburger → close menu
+  if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+    navLinks.classList.remove('show');
+  }
+});
 
 
 //header dissapearing
