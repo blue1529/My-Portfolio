@@ -1,4 +1,16 @@
+const sections = document.querySelectorAll('.fade-in');
+// Intersection Observer for fade-in sections
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
+    }
+  });
+}, { threshold: 0.5 });
 
+sections.forEach(section => observer.observe(section));
 
 //Themes
 const toggle = document.getElementById("theme-toggle");

@@ -50,7 +50,7 @@
     <a href="#home">
 <button id="back-to-top" title="Back to Top">↑</button></a>
 
-    <section class="main-home">
+    <section class="main-home fade-in">
   
     <!-- Left: Home content -->
     <section id="home">
@@ -106,7 +106,7 @@
 
 
 <!-- About section -->
-    <section id="about">
+    <section id="about" class="fade-in">
         <h2>About Me</h2>
         <div class="about-content">
             
@@ -196,8 +196,10 @@
             </div>
         </div>
     </section>
+
+<!-- Projects section -->
 <h1>Projects</h1>
-<section id="projects">
+<section id="projects" class="fade-in">
   
   <a href="webdesigning.html" id="webdesigning" class="project-link" rel="noopener">
   <div class="project-box websites">
@@ -228,7 +230,8 @@
 
 
 <!-- Contacts section -->
-    <section id="contact">
+    <section id="contact" class="fade-in">
+      <div class="contact-container">
         <h2>Contact Me</h2>
         <p class="contact-description">If you would like to get in touch, please feel free to reach out via the contact form below or connect with me on social media.</p>
         <div class="contact-content">
@@ -278,7 +281,15 @@
         <footer>
           <p>© 2025 Madalitso Newton Kalulu. All rights reserved.</p>
         </footer>
-        
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://www.newtonkalulu.vercel.app",
+      "name": "Madalitso Newton Kalulu Portfolio",
+      "logo": "https://www.newtonkalulu.vercel.app/images/logo.png"
+    }
+    </script>
     <script src="/scripts/main.js"></script>
 </body>
 </html>

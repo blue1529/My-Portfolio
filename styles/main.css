@@ -77,6 +77,18 @@ body {
     z-index: -1;
 }
 
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+/* This class will be added dynamically */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 header {
     background: var(--background);
     color: var(--text);
