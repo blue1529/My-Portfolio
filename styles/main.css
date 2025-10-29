@@ -170,6 +170,7 @@ nav a {
 
 /* Mobile */
 @media (max-width: 768px) {
+   
     .dropdown {
         position: relative;
         top:0;
@@ -185,11 +186,11 @@ nav a {
         flex-direction: column;
         background: var(--background);
         text-align: left;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         width: 50%;
-        height: 112vh;
+        height: 100vh;
         padding: 10px 0;
         z-index: 10000;
     }
@@ -199,28 +200,29 @@ nav a {
     }
     .foot {
         display: block;
-        margin-top: 70vh;
+        position: absolute;
+        bottom: 20px;
         color: var(--primary);
         margin-left: 20px;
-        animation: bounce 3s infinite;
+        animation: bounce 4s infinite;
 
     }
     @keyframes bounce {
         0% {
-    transform: translateY(0);
+    transform: translateY(0) translateX(0);
     }
     30% {
-        transform: translateY(-30px);
+        transform: translateY(-130px) translateX(130px);
     }
     50% {
-        transform: translateY(0);
+        transform: translateY(0) translateX(0);
     }
     70% {
-        transform: translateY(-20px);
+        transform:   translateX(100px);
     }
     100% {
-        transform: translateY(0);
-    }        
+        transform: translateY(0) translateX(0);
+    }
     }
     .hamburger {
         display: flex;
@@ -525,11 +527,13 @@ h1 span:nth-child(23) { animation-delay: 2.2s;}
 .skill:first-child .fill {
     width: 90%;       /* match the "data-percent" */
 }
-
-#projects {
+.projects {
     padding: 40px 20px;
     background: var(--background);
     color: var(--primary);
+    text-align: center;
+}
+.project-container {
     text-align: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -593,7 +597,110 @@ h1 span:nth-child(23) { animation-delay: 2.2s;}
     background: var(--accent);
     color: var(--background);
 }
+/* Downloads Section for resume*/
+.resume {
+    text-align: center;
+    padding: 100px 0px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 30px 20px;
+    background-color: var(--glass);
+}
+.download {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.resume-title {
+    text-align: center;
+    color: var(--primary);
+        margin-bottom: 60px;
+    position: relative;
 
+}
+.resume-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(135deg, var(--secondary), var(--primary), var(--secondary));
+    border-radius: 2px;
+}
+.download-container {
+    max-width: 800px;
+    margin: 0px auto;
+}
+.download-overview {
+    position: relative;
+    background: rgba(26, 26, 62, 0.8);
+    border-radius: 20px;
+    padding: 60px 40px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(100, 255, 218, 0.2);
+    border-image: initial;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.resume-icon {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--secondary), var(--primary), var(--secondary));
+    border-radius: 50%;
+    margin: 0px auto;
+    transition: 0.3s;
+    overflow: hidden;
+}
+.resume-icon::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 50%;
+}
+.fa-file-pdf {
+    font-size: 3.5rem;
+}
+.fa-file-pdf:before {
+    content: "\f1c1";
+}
+.download-title {
+    color: var(--text);
+    text-align: center;
+}
+.highlighted-item {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-top: 30px;
+    font-weight: bold;
+}
+.download-button {
+    min-width: 250px;
+    max-width: 350px;
+    height: 50px;
+    margin-top: 40px;
+    background-color: var(--primary);
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.download-button:hover {
+    transition: 1s ease;
+    transform: scale(1.1);
+    cursor: grab;
+}
 
 #contact {
     padding: 40px 20px;
@@ -735,6 +842,11 @@ footer {
     .card:nth-of-type(3) {
         width: 100%;
         max-width: 100%;
+    }
+
+    .resume-icon {
+        width: 100px;
+        height: 100px;
     }
     .contact-content {
         flex-direction: column-reverse;

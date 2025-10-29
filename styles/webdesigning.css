@@ -144,3 +144,12 @@ section h2 {
     border-radius: 5px;
     padding: 5px;
 }
+.languages-used {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: var(--text);
+    display: flex;
+    gap: 5px;
+
+}
