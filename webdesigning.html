@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico.png">
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="output.css">
+        <title>Web Design Projects | Madalitso Newton Kalulu</title>
+
+        <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        secondary: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'gradient': 'gradient 3s ease infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+
+        <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gradient 3s ease infinite;
+        }
+        
+        .project-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .image-hover {
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .image-hover {
+            transform: scale(1.05);
+        }
+        
+        .tech-tag {
+            transition: all 0.2s ease;
+        }
+        
+        .tech-tag:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Theme toggle styles */
+        .theme-toggle {
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: rotate(12deg);
+        }
+        
+        .dark .gradient-text-dark {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+    </head>
+    <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300">
+        <!-- Header -->
+        <header
+        id="main-header"
+            class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm dark:shadow-gray-800/30">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <a href="index.html"
+                            class="flex items-center space-x-3 group">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center transform group-hover:rotate-12 transition-transform">
+                                <i class="fas fa-arrow-left text-white"></i>
+                            </div>
+                            <div>
+                                <span
+                                    class="font-semibold text-gray-700 dark:text-gray-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Back
+                                    to Home</span>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Web Design
+                                    Projects</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <!-- Theme Toggle Button -->
+                        <button id="theme-toggle" class="theme-toggle w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" title="Toggle Dark Mode">
+                            <i class="fas fa-moon text-gray-600 dark:text-gray-300" id="theme-icon"></i>
+                        </button>
+                        
+                        <a href="#pricing-webdesign" class="hover:bg-green-300 dark:hover:bg-green-900/50 p-2 rounded-lg transition-colors">
+                            <div class="hidden md:block">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-dollar-sign text-green-500"></i>
+                                    <span
+                                        class="text-sm font-medium text-gray-600 dark:text-gray-300">Pricing
+                                        Plans</span>
+                                </div>
+                            </div>  
+                        </a>
+                        <a href="#projects" class="hover:bg-blue-300 dark:hover:bg-blue-900/50 p-2 rounded-lg transition-colors">
+                            <div class="hidden md:block">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-briefcase text-blue-500"></i>
+                                    <span
+                                        class="text-sm font-medium text-gray-600 dark:text-gray-300">5
+                                        Projects</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="relative pt-36 pb-20 px-6 overflow-hidden">
+            <div class="absolute h-full w-full top-0 right-0 z-10">
+                <img src="images/projects - web-design/web-bg.png"
+                    class="absolute right-0 w-1/4 h-1/4 object-fit opacity-50 dark:opacity-20"
+                    alt="Spider Bg">
+                <img src="images/projects - web-design/web-bg2.png"
+                    class="absolute left-0 w-1/4 h-1/4 object-fit transform -scale-x-100 opacity-50 dark:opacity-20"
+                    alt="Spider Bg">
+            </div>
+            <div
+                class="absolute inset-0 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-800 dark:to-gray-900 opacity-50 dark:opacity-30"></div>
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary-400 to-transparent rounded-full blur-3xl opacity-20 dark:opacity-10"></div>
+            <div
+                class="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-secondary-400 to-transparent rounded-full blur-3xl opacity-20 dark:opacity-10"></div>
+
+            <div class="container mx-auto relative z-10">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="inline-block mb-6">
+                        <span
+                            class="px-4 py-2 rounded-full bg-gradient-to-r from-primary-100 to-secondary-100 dark:from-gray-800 dark:to-gray-700 text-primary-600 dark:text-primary-400 text-sm font-semibold border border-primary-200 dark:border-gray-700">
+                            <i class="fas fa-paint-brush mr-2"></i>Web Design
+                            Portfolio
+                        </span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                        <span class="gradient-text dark:gradient-text-dark">Creative</span>
+                        <span class="block mt-2 text-gray-800 dark:text-gray-100">Web
+                            Solutions</span>
+                    </h1>
+
+                    <p
+                        class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+                        Showcasing my journey in crafting beautiful, functional
+                        websites that solve real-world problems
+                        and deliver exceptional user experiences.
+                    </p>
+
+                    <div class="flex flex-wrap justify-center gap-4 mb-12">
+                        <div
+                            class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm border dark:border-gray-700">
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300">Responsive
+                                Design</span>
+                        </div>
+                        <div
+                            class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm border dark:border-gray-700">
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300">Modern
+                                UI/UX</span>
+                        </div>
+                        <div
+                            class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm border dark:border-gray-700">
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300">Performance
+                                Optimized</span>
+                        </div>
+                        <div
+                            class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm border dark:border-gray-700">
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300">Cross-browser
+                                Compatible</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 px-6">
+            <div class="container mx-auto max-w-6xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 dark:text-gray-100">Featured
+                        Projects</h2>
+                    <div
+                        class="w-24 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full mb-6"></div>
+                    <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+                        Each project represents a unique challenge and solution,
+                        built with care and attention to detail.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Agape Secondary School -->
+                    <div
+                        class="project-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl dark:shadow-gray-900/50 dark:hover:shadow-gray-900 border border-gray-100 dark:border-gray-700">
+                        <div class="relative overflow-hidden">
+                            <div class="absolute top-4 left-4 z-10">
+                                <span
+                                    class="px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs font-semibold rounded-full">
+                                    Live Production
+                                </span>
+                            </div>
+                            <a href="https://agapesecondaryschool.com/"
+                                target="_blank" rel="noopener" class="block">
+                                <div class="h-64 overflow-hidden">
+                                    <img
+                                        src="images/projects - web-design/Agape Secondary School 2.png"
+                                        alt="Agape Secondary School website"
+                                        class="w-full h-full object-cover image-hover">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3
+                                    class="text-2xl font-bold text-gray-800 dark:text-gray-100">Agape
+                                    Secondary School</h3>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">2025</span>
+                            </div>
+
+                            <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                                Official website for Agape Secondary School,
+                                providing comprehensive information
+                                about academic programs, admissions, and school
+                                activities.
+                            </p>
+
+                            <div class="mb-6">
+                                <h4
+                                    class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Technologies
+                                    Used</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm rounded-full border border-blue-100 dark:border-blue-800">
+                                        HTML5
+                                    </span>
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 text-sm rounded-full border border-pink-100 dark:border-pink-800">
+                                        Tailwind CSS
+                                    </span>
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-yellow-50 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-sm rounded-full border border-yellow-100 dark:border-yellow-800">
+                                        JavaScript
+                                    </span>
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-sm rounded-full border border-purple-100 dark:border-purple-800">
+                                        PHP
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-center justify-between gap-10 pt-4 border-t border-gray-100 dark:border-gray-700">
+                                <a href="https://agapesecondaryschool.com/"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="group flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-semibold transition-colors">
+                                    <span>View Live Project</span>
+                                    <i
+                                        class="fas fa-external-link-alt transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">
+                                    <i class="fas fa-globe mr-1"></i>
+                                    agapesecondaryschool.com
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Agape Life Church -->
+                    <div
+                        class="project-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl dark:shadow-gray-900/50 dark:hover:shadow-gray-900 border border-gray-100 dark:border-gray-700">
+                        <div class="relative overflow-hidden">
+                            <div class="absolute top-4 left-4 z-10">
+                                <span
+                                    class="px-3 py-1 bg-gradient-to-r from-yellow-500 to-red-600 text-white text-xs font-semibold rounded-full">
+                                    Live Production
+                                </span>
+                            </div>
+                            <a href="https://alciempowerment.com/"
+                                target="_blank" rel="noopener" class="block">
+                                <div class="h-64 overflow-hidden">
+                                    <img
+                                        src="images/projects - web-design/Agape Life Church Empowerment Center  1.png"
+                                        alt="Agape Life Church website"
+                                        class="w-full h-full object-cover image-hover">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3
+                                    class="text-2xl font-bold text-gray-800 dark:text-gray-100">Agape
+                                    Life Church Empowerment Center</h3>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">2026</span>
+                            </div>
+
+                            <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                                Official website for Agape Life Church <strong class="dark:text-gray-100">Empowerment Center</strong>,
+                                featuring service times, ministries,
+                                events, and contact information.
+                            </p>
+
+                            <div class="mb-6">
+                                <h4
+                                    class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Technologies
+                                    Used</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm rounded-full border border-blue-100 dark:border-blue-800">
+                                        HTML5
+                                    </span>
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 text-sm rounded-full border border-pink-100 dark:border-pink-800">
+                                        Tailwind CSS
+                                    </span>
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-yellow-50 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-sm rounded-full border border-yellow-100 dark:border-yellow-800">
+                                        JavaScript
+                                    </span>
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-sm rounded-full border border-purple-100 dark:border-purple-800">
+                                        PHP
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-center justify-between gap-10 pt-4 border-t border-gray-100 dark:border-gray-700">
+                                <a href="https://alciempowerment.com/"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="group flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-semibold transition-colors">
+                                    <span>View Live Project</span>
+                                    <i
+                                        class="fas fa-external-link-alt transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">
+                                    <i class="fas fa-globe mr-1"></i>
+                                    alciempowerment.com
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Bangle Bliss -->
+                    <div
+                        class="project-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl dark:shadow-gray-900/50 dark:hover:shadow-gray-900 border border-gray-100 dark:border-gray-700">
+                        <div class="relative overflow-hidden">
+                            <div class="absolute top-4 left-4 z-10">
+                                <span
+                                    class="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-600 text-white text-xs font-semibold rounded-full">
+                                    E-commerce
+                                </span>
+                            </div>
+                            <a href="https://bangle-bliss.vercel.app/"
+                                target="_blank" rel="noopener" class="block">
+                                <div class="h-64 overflow-hidden">
+                                    <img
+                                        src="images/projects - web-design/Bangle bliss 1.png"
+                                        alt="Bangle bliss website"
+                                        class="w-full h-full object-cover image-hover">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3
+                                    class="text-2xl font-bold text-gray-800 dark:text-gray-100">Bangle
+                                    Bliss</h3>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">2024</span>
+                            </div>
+
+                            <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                                A modern e-commerce product landing page
+                                showcasing jewelry products, featuring
+                                responsive design and smooth user interactions.
+                            </p>
+
+                            <div class="mb-6">
+                                <h4
+                                    class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Technologies
+                                    Used</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm rounded-full border border-blue-100 dark:border-blue-800">
+                                        HTML5
+                                    </span>
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 text-sm rounded-full border border-pink-100 dark:border-pink-800">
+                                        Tailwind CSS
+                                    </span>
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-yellow-50 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-sm rounded-full border border-yellow-100 dark:border-yellow-800">
+                                        JavaScript
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-center justify-between gap-10 pt-4 border-t border-gray-100 dark:border-gray-700">
+                                <a href="https://bangle-bliss.vercel.app/"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="group flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-semibold transition-colors">
+                                    <span>View Live Project</span>
+                                    <i
+                                        class="fas fa-external-link-alt transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">
+                                    <i class="fas fa-code mr-1"></i>
+                                    bangle-bliss.vercel.app
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newtons Fresh Poultry -->
+                    <div
+                        class="project-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl dark:shadow-gray-900/50 dark:hover:shadow-gray-900 border border-gray-100 dark:border-gray-700">
+                        <div class="relative overflow-hidden">
+                            <div class="absolute top-4 left-4 z-10">
+                                <span
+                                    class="px-3 py-1 bg-gradient-to-r from-orange-500 to-red-600 text-white text-xs font-semibold rounded-full">
+                                    Business Website
+                                </span>
+                            </div>
+                            <a href="https://newtons-broilers.vercel.app/"
+                                target="_blank" rel="noopener" class="block">
+                                <div class="h-64 overflow-hidden">
+                                    <img
+                                        src="images/projects - web-design/Newtons Fresh Poultry 2.png"
+                                        alt="Newtons Fresh Poultry website"
+                                        class="w-full h-full object-cover image-hover">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3
+                                    class="text-2xl font-bold text-gray-800 dark:text-gray-100">Newtons
+                                    Fresh Poultry</h3>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">2024</span>
+                            </div>
+
+                            <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                                Business website for a local poultry enterprise,
+                                featuring product showcases,
+                                service information, and contact functionality.
+                            </p>
+
+                            <div class="mb-6">
+                                <h4
+                                    class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Technologies
+                                    Used</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm rounded-full border border-blue-100 dark:border-blue-800">
+                                        HTML5
+                                    </span>
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 text-sm rounded-full border border-pink-100 dark:border-pink-800">
+                                        Tailwind CSS
+                                    </span>
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-yellow-50 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-sm rounded-full border border-yellow-100 dark:border-yellow-800">
+                                        JavaScript
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-center justify-between gap-10 pt-4 border-t border-gray-100 dark:border-gray-700">
+                                <a href="https://newtons-broilers.vercel.app/"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="group flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-semibold transition-colors">
+                                    <span>View Live Project</span>
+                                    <i
+                                        class="fas fa-external-link-alt transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">
+                                    <i class="fas fa-code mr-1"></i>
+                                    newtons-broilers.vercel.app
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secure Vault -->
+                    <div
+                        class="project-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl dark:shadow-gray-900/50 dark:hover:shadow-gray-900 border border-gray-100 dark:border-gray-700">
+                        <div class="relative overflow-hidden">
+                            <div class="absolute top-4 left-4 z-10">
+                                <span
+                                    class="px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-semibold rounded-full">
+                                    Security App
+                                </span>
+                            </div>
+                            <a href="https://securevault-sigma.vercel.app/"
+                                target="_blank" rel="noopener" class="block">
+                                <div class="h-64 overflow-hidden">
+                                    <img
+                                        src="images/projects - web-design/Secure Vault.png"
+                                        alt="Secure Vault website"
+                                        class="w-full h-full object-cover image-hover">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3
+                                    class="text-2xl font-bold text-gray-800 dark:text-gray-100">Secure
+                                    Vault</h3>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">2024</span>
+                            </div>
+
+                            <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                                A secure password management interface
+                                demonstrating modern UI design principles
+                                with Tailwind CSS and advanced security
+                                features.
+                            </p>
+
+                            <div class="mb-6">
+                                <h4
+                                    class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Technologies
+                                    Used</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm rounded-full border border-blue-100 dark:border-blue-800">
+                                        HTML5
+                                    </span>
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-cyan-50 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 text-sm rounded-full border border-cyan-100 dark:border-cyan-800">
+                                        Tailwind CSS
+                                    </span>
+                                    <span
+                                        class="tech-tag px-3 py-1 bg-yellow-50 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 text-sm rounded-full border border-yellow-100 dark:border-yellow-800">
+                                        JavaScript
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-center justify-between gap-10 pt-4 border-t border-gray-100 dark:border-gray-700">
+                                <a href="https://securevault-sigma.vercel.app/"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="group flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-semibold transition-colors">
+                                    <span>View Live Project</span>
+                                    <i
+                                        class="fas fa-external-link-alt transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">
+                                    <i class="fas fa-code mr-1"></i>
+                                    securevault-sigma.vercel.app
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section
+            class="py-16 px-6 bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-gray-800 dark:to-gray-900">
+            <div class="container mx-auto max-w-4xl">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div
+                            class="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">4</div>
+                        <div
+                            class="text-sm text-gray-600 dark:text-gray-300 font-semibold">Completed
+                            Projects</div>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="text-4xl font-bold text-secondary-600 dark:text-secondary-400 mb-2">100%</div>
+                        <div
+                            class="text-sm text-gray-600 dark:text-gray-300 font-semibold">Responsive
+                            Design</div>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">3</div>
+                        <div
+                            class="text-sm text-gray-600 dark:text-gray-300 font-semibold">Technologies</div>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="text-4xl font-bold text-secondary-600 dark:text-secondary-400 mb-2">∞</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-300 font-semibold">User
+                            Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services/Pricing Section -->
+        <section id="pricing-webdesign" class="py-16 px-4 md:px-8 lg:px-16">
+            <div class="max-w-7xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-12">
+                    <h2
+                        class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">Development
+                        Services</h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Choose
+                        the perfect package for your online presence. All
+                        packages include responsive design, SEO basics, and my
+                        commitment to quality code.</p>
+                </div>
+
+                <!-- Pricing Cards Container -->
+                <div
+                    class="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8">
+
+                    <!-- Tier 1: Static Website -->
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden w-full max-w-md transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <div class="p-8">
+                            <div class="mb-6">
+                                <span
+                                    class="inline-block px-4 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">Perfect
+                                    for Startups</span>
+                                <h3 class="text-2xl font-bold mt-4 dark:text-gray-100">Static
+                                    Website</h3>
+                                <div class="mt-4 flex items-baseline">
+                                    <span class="text-5xl font-bold dark:text-gray-100">$400</span>
+                                    <span class="ml-2 text-gray-500 dark:text-gray-400">+</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 mt-2">Fast, secure, and
+                                    professional</p>
+                            </div>
+
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">3-5 Page Custom Site
+                                        (HTML/Tailwind)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">Mobile-First Responsive Design</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">Basic On-Page SEO Setup</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">Contact Form with Formspree</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="dark:text-gray-300">Free Hosting (Netlify/Vercel) Setup </span>
+                                        <span class="text-slate-800 dark:text-gray-400">Paid hosting for custom domain</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">1 year Bug Fix Support</span>
+                                </li>
+                            </ul>
+
+                            <button
+                                class="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition duration-300">
+                                Get Your Quote
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tier 2: PHP Business Site (Most Popular) -->
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden w-full max-w-md transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-2 border-blue-500 relative">
+                        <!-- Popular Badge -->
+                        <div
+                            class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1">
+                            <div
+                                class="bg-blue-500 text-white px-6 py-2 rounded-b-lg font-bold">
+                                MOST POPULAR
+                            </div>
+                        </div>
+
+                        <div class="p-8 pt-12">
+                            <div class="mb-6">
+                                <span
+                                    class="inline-block px-4 py-1 bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300 rounded-full text-sm font-semibold">Growing
+                                    Businesses</span>
+                                <h3 class="text-2xl font-bold mt-4 dark:text-gray-100">PHP Business
+                                    Site</h3>
+                                <div class="mt-4 flex items-baseline">
+                                    <span
+                                        class="text-5xl font-bold dark:text-gray-100">$1,000</span>
+                                    <span class="ml-2 text-gray-500 dark:text-gray-400">+</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 mt-2">Interactive
+                                    features for growth</p>
+                            </div>
+
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300"><strong>Everything in Static,
+                                            plus:</strong></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">Custom PHP Functionality</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">Multi-Step Forms & Calculators</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">Enhanced SEO & Site Structure</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">Google Analytics Setup</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">2 years Support</span>
+                                </li>
+                            </ul>
+
+                            <button
+                                class="w-full py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition duration-300">
+                                Start Your Project
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tier 3: Custom PHP Application -->
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden w-full max-w-md transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <div class="p-8">
+                            <div class="mb-6">
+                                <span
+                                    class="inline-block px-4 py-1 bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 rounded-full text-sm font-semibold">Advanced
+                                    Needs</span>
+                                <h3 class="text-2xl font-bold mt-4 dark:text-gray-100">Custom PHP
+                                    Site</h3>
+                                <div class="mt-4 flex items-baseline">
+                                    <span
+                                        class="text-5xl font-bold dark:text-gray-100">$1,500</span>
+                                    <span class="ml-2 text-gray-500 dark:text-gray-400">+</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 mt-2">Tailored solutions
+                                    for your business</p>
+                            </div>
+
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300"><strong>Everything in PHP Business,
+                                            plus:</strong></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">Custom Web Site</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">User Authentication System</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">Admin Dashboard</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">Database Design & Integration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="dark:text-gray-300">Ongoing Maintenance Plan
+                                        Available</span>
+                                </li>
+                            </ul>
+
+                            <button
+                                class="w-full py-3 px-6 bg-gray-800 dark:bg-gray-900 hover:bg-gray-900 dark:hover:bg-gray-950 text-white font-semibold rounded-lg transition duration-300">
+                                Discuss Your Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- FAQ/Note Section -->
+                    <div class="mt-16 max-w-3xl mx-auto bg-blue-50 dark:bg-blue-900/20 rounded-xl p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">What's
+                            Included in All Packages?</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-1 gap-6">
+                            <div>
+                                <h4
+                                    class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                    <i class="fas fa-code text-blue-500 mr-2"></i>
+                                    Clean Code Guarantee
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-300">Semantic HTML5, organized
+                                    Tailwind CSS, and well-structured PHP.</p>
+                            </div>
+                            <div>
+                                <h4
+                                    class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                    <i
+                                        class="fas fa-mobile-alt text-blue-500 mr-2"></i>
+                                    Fully Responsive
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-300">Perfect display on mobile,
+                                    tablet, and desktop devices.</p>
+                            </div>
+                            <div>
+                                <h4
+                                    class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                    <i class="fas fa-search text-blue-500 mr-2"></i>
+                                    SEO Foundation
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-300">All technical SEO basics
+                                    for Google visibility.</p>
+                            </div>
+                            <div>
+                                <h4
+                                    class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                    <i class="fas fa-rocket text-blue-500 mr-2"></i>
+                                    Fast Performance
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-300">Optimized assets and
+                                    efficient code for fast loading.</p>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-gray-700 dark:text-gray-300 italic">Note: Each project
+                            begins with a free consultation. Final pricing depends
+                            on specific requirements.</p>
+                    </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 px-6">
+            <div class="container mx-auto max-w-4xl text-center">
+                <div
+                    class="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl p-12 shadow-2xl">
+                    <h2 class="text-4xl font-bold text-white mb-6">Ready to
+                        Start Your Project?</h2>
+                    <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+                        Let's work together to create something amazing. I'm
+                        available for freelance web design projects.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="index.html#contact"
+                            class="px-8 py-3 bg-white text-primary-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Get In Touch
+                        </a>
+                        <a href="index.html#projects"
+                            class="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors">
+                            View More Projects
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-8 px-6 border-t border-gray-200 dark:border-gray-800">
+            <div class="container mx-auto">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <p class="text-gray-600 dark:text-gray-400">
+                            <i class="fas fa-code text-primary-500 mr-2"></i>
+                            Web Design Portfolio • Madalitso Newton Kalulu
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <span class="text-gray-500 dark:text-gray-400 text-sm">
+                            Last Updated: December 2025
+                        </span>
+                        <a href="index.html"
+                            class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-semibold">
+                            Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        
+        // Check for saved theme preference or default to light
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add hover effect to tech tags
+        document.querySelectorAll('.tech-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', () => {
+                tag.style.transform = 'translateY(-2px)';
+                tag.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            });
+            
+            tag.addEventListener('mouseleave', () => {
+                tag.style.transform = 'translateY(0)';
+                tag.style.boxShadow = '';
+            });
+        });
+
+        // Add image loading animation
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', () => {
+                img.style.opacity = '1';
+            });
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.5s ease-in-out';
+        });
+    </script>
+        <script src="scripts/header.js"></script>
+    </body>
+</html>

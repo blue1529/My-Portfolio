@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Cybersecurity | Madalitso Newton Kalulu</title>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'matrix-fade': 'matrixFade 1s ease-in-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                        'scan': 'scan 3s linear infinite',
+                    },
+                    keyframes: {
+                        matrixFade: {
+                            '0%': { opacity: '1' },
+                            '100%': { opacity: '0' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { 
+                                boxShadow: '0 0 20px rgba(34, 197, 94, 0.3)',
+                                borderColor: 'rgba(34, 197, 94, 0.5)'
+                            },
+                            '50%': { 
+                                boxShadow: '0 0 40px rgba(34, 197, 94, 0.6)',
+                                borderColor: 'rgba(34, 197, 94, 0.8)'
+                            },
+                        },
+                        scan: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(100vh)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .cyber-gradient {
+            background: linear-gradient(135deg, #16a34a 0%, #0d9488 50%, #0891b2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cyber-border {
+            position: relative;
+            border: 2px solid transparent;
+            background: linear-gradient(#0f172a, #0f172a) padding-box,
+                        linear-gradient(135deg, #16a34a, #0891b2) border-box;
+        }
+        
+        .scan-line {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #22c55e, transparent);
+            animation: scan 3s linear infinite;
+        }
+        
+        .hacker-text {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-100 min-h-screen">
+    <!-- Matrix Background -->
+    <canvas id="matrix" class="matrix-bg opacity-30"></canvas>
+    
+    <!-- Header -->
+    <header class="relative z-50">
+        <div class="container mx-auto px-6 py-6">
+            <a href="index.html" class="inline-flex items-center space-x-3 text-cyber-400 hover:text-cyber-300 transition-colors duration-300 group">
+                <div class="w-10 h-10 rounded-full border-2 border-cyber-500 flex items-center justify-center group-hover:animate-pulse-glow">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <span class="font-semibold hacker-text">BACK TO HOME</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-24 px-6 overflow-hidden">
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto">
+                <!-- Animated Scan Line -->
+                <div class="relative mb-8 h-1 overflow-hidden rounded-full bg-dark-700">
+                    <div class="scan-line"></div>
+                </div>
+                
+                <div class="text-center mb-12">
+                    <div class="inline-block mb-6">
+                        <span class="px-4 py-2 rounded-full bg-cyber-900/30 text-cyber-400 text-sm font-mono border border-cyber-500/30">
+                            <i class="fas fa-shield-alt mr-2"></i>CYBERSECURITY PORTAL
+                        </span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 hacker-text">
+                        <span class="cyber-gradient">SECURITY</span>
+                        <span class="block mt-2">INFORMATION</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+                        Securing digital assets through advanced cybersecurity practices, 
+                        threat analysis, and proactive defense strategies.
+                    </p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                    <div class="cyber-border rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300">
+                        <div class="text-3xl font-bold text-cyber-400 mb-2">100%</div>
+                        <div class="text-sm text-gray-400 font-mono">SECURE SYSTEMS</div>
+                    </div>
+                    <div class="cyber-border rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300">
+                        <div class="text-3xl font-bold text-cyber-400 mb-2">24/7</div>
+                        <div class="text-sm text-gray-400 font-mono">MONITORING</div>
+                    </div>
+                    <div class="cyber-border rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300">
+                        <div class="text-3xl font-bold text-cyber-400 mb-2">0</div>
+                        <div class="text-sm text-gray-400 font-mono">SECURITY BREACHES</div>
+                    </div>
+                    <div class="cyber-border rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300">
+                        <div class="text-3xl font-bold text-cyber-400 mb-2">∞</div>
+                        <div class="text-sm text-gray-400 font-mono">THREATS ANALYZED</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-16 px-6 bg-dark-800/50 backdrop-blur-sm">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 flex items-center justify-center gap-3">
+                    <i class="fas fa-graduation-cap text-cyber-400"></i>
+                    <span>EDUCATION &<span class="cyber-gradient ml-2">CERTIFICATIONS</span></span>
+                </h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-cyber-500 to-cyan-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- University -->
+                <div class="cyber-border rounded-2xl p-8 hover:shadow-2xl hover:shadow-cyber-500/20 transition-all duration-300">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyber-600 to-cyan-600 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-university text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Bachelor of Science in Cybersecurity</h3>
+                            <p class="text-cyber-400 font-mono text-sm">Malawi University of Science and Technology</p>
+                            <span class="px-3 py-1 bg-cyber-900/30 text-cyber-400 text-xs rounded-full mt-2 inline-block">
+                                2024 - 2028
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <h4 class="font-semibold text-gray-300 flex items-center gap-2">
+                            <i class="fas fa-book text-cyber-400"></i>
+                            Relevant Coursework
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-dark-700 text-cyber-300 text-sm rounded-full border border-cyber-500/30">
+                                Network Security
+                            </span>
+                            <span class="px-3 py-1 bg-dark-700 text-cyber-300 text-sm rounded-full border border-cyber-500/30">
+                                Ethical Hacking
+                            </span>
+                            <span class="px-3 py-1 bg-dark-700 text-cyber-300 text-sm rounded-full border border-cyber-500/30">
+                                Cryptography
+                            </span>
+                            <span class="px-3 py-1 bg-dark-700 text-cyber-300 text-sm rounded-full border border-cyber-500/30">
+                                Risk Management
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="cyber-border rounded-2xl p-8 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-600 to-blue-600 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-certificate text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">CISCO Certifications</h3>
+                            <p class="text-cyan-400 font-mono text-sm">Networking Academy</p>
+                            <span class="px-3 py-1 bg-cyan-900/30 text-cyan-400 text-xs rounded-full mt-2 inline-block">
+                                2023
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-300 mb-2">Completed Courses:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-cyan-400"></i>
+                                    <span>Cybersecurity Essentials</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-cyan-400"></i>
+                                    <span>Introduction to Cybersecurity</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-cyan-400"></i>
+                                    <span>Network Fundamentals</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pt-4 border-t border-dark-600">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-400">Verification Status:</span>
+                                <span class="px-3 py-1 bg-green-900/30 text-green-400 text-sm rounded-full flex items-center gap-2">
+                                    <i class="fas fa-shield-check"></i>
+                                    Verified
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-16 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 flex items-center justify-center gap-3">
+                    <i class="fas fa-tools text-cyber-400"></i>
+                    <span>TECHNICAL<span class="cyber-gradient ml-2">EXPERTISE</span></span>
+                </h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Skill Cards -->
+                <div class="cyber-border rounded-xl p-6 hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-cyber-600 to-cyan-600 flex items-center justify-center">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Network Security</h3>
+                            <div class="w-full h-2 bg-dark-700 rounded-full mt-2">
+                                <div class="h-full bg-gradient-to-r from-cyber-500 to-cyan-500 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Advanced network protection, firewall configuration, intrusion detection systems
+                    </p>
+                </div>
+
+                <div class="cyber-border rounded-xl p-6 hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-600 to-blue-600 flex items-center justify-center">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Ethical Hacking</h3>
+                            <div class="w-full h-2 bg-dark-700 rounded-full mt-2">
+                                <div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Penetration testing, vulnerability assessment, security auditing
+                    </p>
+                </div>
+
+                <div class="cyber-border rounded-xl p-6 hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Cryptography</h3>
+                            <div class="w-full h-2 bg-dark-700 rounded-full mt-2">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Encryption algorithms, digital signatures, secure key management
+                    </p>
+                </div>
+
+                <div class="cyber-border rounded-xl p-6 hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Risk Management</h3>
+                            <div class="w-full h-2 bg-dark-700 rounded-full mt-2">
+                                <div class="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Threat analysis, risk assessment, compliance frameworks
+                    </p>
+                </div>
+
+                <div class="cyber-border rounded-xl p-6 hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-600 to-red-600 flex items-center justify-center">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Incident Response</h3>
+                            <div class="w-full h-2 bg-dark-700 rounded-full mt-2">
+                                <div class="h-full bg-gradient-to-r from-pink-500 to-red-500 rounded-full" style="width: 87%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Emergency response planning, forensic analysis, recovery procedures
+                    </p>
+                </div>
+
+                <div class="cyber-border rounded-xl p-6 hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-red-600 to-orange-600 flex items-center justify-center">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Security Auditing</h3>
+                            <div class="w-full h-2 bg-dark-700 rounded-full mt-2">
+                                <div class="h-full bg-gradient-to-r from-red-500 to-orange-500 rounded-full" style="width: 91%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Security assessments, compliance checks, audit reporting
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="py-24 px-6 bg-gradient-to-b from-dark-900 to-cyber-900/10">
+        <div class="container mx-auto max-w-4xl text-center">
+            <div class="inline-block mb-8">
+                <div class="w-32 h-32 rounded-full bg-gradient-to-br from-cyber-500/20 to-cyan-500/20 flex items-center justify-center mx-auto border-2 border-cyber-500/30 animate-pulse">
+                    <i class="fas fa-lock text-5xl text-cyber-400"></i>
+                </div>
+            </div>
+            
+            <h2 class="text-5xl font-bold mb-6 hacker-text">
+                <span class="cyber-gradient">COMING SOON</span>
+            </h2>
+            
+            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Advanced cybersecurity projects, research papers, and detailed case studies 
+                are currently in development. Stay tuned for cutting-edge security solutions.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="px-6 py-3 bg-cyber-900/30 text-cyber-400 rounded-lg border border-cyber-500/30">
+                    <i class="fas fa-clock mr-2"></i>
+                    IN DEVELOPMENT
+                </div>
+                <div class="px-6 py-3 bg-cyan-900/30 text-cyan-400 rounded-lg border border-cyan-500/30">
+                    <i class="fas fa-code mr-2"></i>
+                    SECURITY TOOLS
+                </div>
+                <div class="px-6 py-3 bg-blue-900/30 text-blue-400 rounded-lg border border-blue-500/30">
+                    <i class="fas fa-file-alt mr-2"></i>
+                    CASE STUDIES
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 border-t border-dark-700">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-500 font-mono text-sm">
+                        <i class="fas fa-shield-alt mr-2 text-cyber-400"></i>
+                        CYBERSECURITY PORTAL v1.0
+                    </p>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <span class="text-gray-500 font-mono text-sm">
+                        LAST UPDATED: DEC 2025
+                    </span>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                        <span class="text-green-400 text-sm font-mono">SYSTEM SECURE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Matrix Rain Effect
+        (function() {
+            const canvas = document.getElementById('matrix');
+            const ctx = canvas.getContext('2d', { alpha: true });
+            
+            function resize() {
+                const dpr = window.devicePixelRatio || 1;
+                canvas.width = Math.floor(window.innerWidth * dpr);
+                canvas.height = Math.floor(window.innerHeight * dpr);
+                canvas.style.width = window.innerWidth + 'px';
+                canvas.style.height = window.innerHeight + 'px';
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            }
+            
+            window.addEventListener('resize', resize);
+            resize();
+            
+            const characters = 'アァカサタナハマヤャラワン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const charArr = characters.split('');
+            const fontSize = Math.max(12, Math.floor(window.innerWidth / 100));
+            const columns = Math.floor(window.innerWidth / fontSize);
+            const drops = Array.from({ length: columns }).map(() => Math.random() * -50);
+            
+            ctx.font = `${fontSize}px JetBrains Mono`;
+            ctx.fillStyle = '#16a34a';
+            
+            let running = true;
+            let animationId;
+            
+            function draw() {
+                if (!running) return;
+                
+                ctx.fillStyle = 'rgba(15, 23, 42, 0.03)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const x = i * fontSize;
+                    const y = drops[i] * fontSize;
+                    
+                    const gradient = ctx.createLinearGradient(x, y, x, y + fontSize * 2);
+                    gradient.addColorStop(0, '#22c55e');
+                    gradient.addColorStop(0.5, '#0d9488');
+                    gradient.addColorStop(1, '#0891b2');
+                    ctx.fillStyle = gradient;
+                    
+                    const text = charArr[Math.floor(Math.random() * charArr.length)];
+                    ctx.fillText(text, x, y);
+                    
+                    if (y > window.innerHeight + Math.random() * 1000) {
+                        drops[i] = Math.random() * -50;
+                    } else {
+                        drops[i] += Math.random() * 0.6 + 0.4;
+                    }
+                }
+                
+                animationId = requestAnimationFrame(draw);
+            }
+            
+            // Start animation
+            animationId = requestAnimationFrame(draw);
+            
+            // Stop after 4 seconds with fade effect
+            setTimeout(() => {
+                canvas.style.transition = 'opacity 1s ease-in-out';
+                canvas.style.opacity = '0.3';
+            }, 4000);
+            
+        })();
+        
+        // Add hover effects to cards
+        document.querySelectorAll('.cyber-border').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

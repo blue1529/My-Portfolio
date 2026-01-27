@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the portfolio of Madalitso Newton Kalulu, a passionate Web Developer and UX Designer. Explore my projects, skills, and services in web design, front-end development, and more.">
+    <meta name="keywords" content="Madalitso Newton Kalulu, Web Developer, UX Designer, Portfolio, Web Design, Front End Development, SEO, Cybersecurity, Java">
+    <meta name="author" content="Madalitso Newton Kalulu">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico.png">
+    <!-- Web Monitor -->
+    <!--<script defer src="https://umami-sigma-three.vercel.app/unami" data-website-id="fd08d3fa-8e44-4a0e-b657-71250fff0d13"></script> -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles/output.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Cal Sans', 'Inter', 'sans-serif'],
+                        'mono' : ['Marvin Visions', 'Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'typewriter': 'typewriter 2s steps(11) 1s 1 normal both',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <title>Madalitso Newton Kalulu | Web Developer & UX Designer</title>
+    <!-- Styles -->
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/cal-sans');
+        @font-face {
+            font-family: 'Marvin Visions';
+            src: url('styles/fonts/MarvinVisions.woff2') format('woff2'),url('styles/fonts/MarvinVisions-Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* From Uiverse.io by Nawsome */ 
+        .plane-switch {
+        --dot: #fff;
+        --street: #6B6D76;
+        --street-line: #A8AAB4;
+        --street-line-mid: #C0C2C8;
+        --sky-1: #60A7FA;
+        --sky-2: #2F8EFC;
+        --light-1: rgba(255, 233, 0, 1);
+        --light-2: rgba(255, 233, 0, .3);
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        }
+
+        .plane-switch input {
+        display: none;
+        }
+
+        .plane-switch input + div {
+        -webkit-mask-image: -webkit-radial-gradient(white, black);
+        position: relative;
+        overflow: hidden;
+        width: 50px;
+        height: 25px;
+        padding: 1px;
+        border-radius: 13px;
+        background: linear-gradient(90deg, var(--street) 0%, var(--street) 25%, var(--sky-1) 75%, var(--sky-2) 100%) left var(--p, 0%) top 0;
+        background-position-x: var(--p, 0%);
+        background-size: 400% auto;
+        transition: background-position 0.6s;
+        }
+
+        .plane-switch input + div:before, .plane-switch input + div:after {
+        content: "";
+        display: block;
+        position: absolute;
+        transform: translateX(var(--s, 0));
+        transition: transform 0.3s;
+        }
+
+        .plane-switch input + div:before {
+        width: 42px;
+        right: 2px;
+        top: 4px;
+        height: 1px;
+        background: var(--street-line);
+        box-shadow: 0 16px 0 0 var(--street-line);
+        }
+
+        .plane-switch input + div:after {
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        left: 23px;
+        top: 1px;
+        -webkit-animation: lights2 2s linear infinite;
+        animation: lights2 2s linear infinite;
+        box-shadow: inset 0 0 0 2px var(--light-1), 0 21px 0 var(--light-1), 8px 0 0 var(--light-2), 8px 21px 0 var(--light-2), 16px 0 0 var(--light-2), 16px 21px 0 var(--light-2);
+        }
+
+        .plane-switch input + div span {
+        display: block;
+        position: absolute;
+        }
+
+        .plane-switch input + div span.street-middle {
+        top: 12px;
+        left: 21px;
+        width: 3px;
+        height: 1px;
+        transform: translateX(var(--s, 0));
+        background: var(--street-line-mid);
+        box-shadow: 5px 0 0 var(--street-line-mid), 10px 0 0 var(--street-line-mid), 15px 0 0 var(--street-line-mid), 20px 0 0 var(--street-line-mid), 25px 0 0 var(--street-line-mid);
+        transition: transform 0.3s;
+        }
+
+        .plane-switch input + div span.cloud {
+        width: 12px;
+        height: 4px;
+        border-radius: 2px;
+        background: #fff;
+        position: absolute;
+        top: var(--ct, 8px);
+        left: 100%;
+        opacity: var(--co, 0);
+        transition: opacity 0.3s;
+        -webkit-animation: clouds2 2s linear infinite var(--cd, 0s);
+        animation: clouds2 2s linear infinite var(--cd, 0s);
+        }
+
+        .plane-switch input + div span.cloud:before, .plane-switch input + div span.cloud:after {
+        content: "";
+        position: absolute;
+        transform: translateX(var(--cx, 0));
+        border-radius: 50%;
+        width: var(--cs, 5px);
+        height: var(--cs, 5px);
+        background: #fff;
+        bottom: 1px;
+        left: 1px;
+        }
+
+        .plane-switch input + div span.cloud:after {
+        --cs: 6px;
+        --cx: 4px;
+        }
+
+        .plane-switch input + div span.cloud.two {
+        --ct: 20px;
+        --cd: 1s;
+        opacity: var(--co-2, 0);
+        }
+
+        .plane-switch input + div div {
+        display: table;
+        position: relative;
+        z-index: 1;
+        padding: 5px;
+        border-radius: 50%;
+        background: var(--dot);
+        transform: translateX(var(--x, 0));
+        transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.35, 1.2);
+        }
+
+        .plane-switch input + div div svg {
+        width: 13px;
+        height: 13px;
+        display: block;
+        color: var(--c, var(--street));
+        transition: color 0.6s;
+        }
+
+        .plane-switch input:checked + div {
+        --p: 100%;
+        --x: 25px;
+        --s: -50px;
+        --c: var(--sky-2);
+        --co: .8;
+        --co-2: .6;
+        }
+
+        @keyframes lights2 {
+        20%, 30% {
+            box-shadow: inset 0 0 0 2px var(--light-2), 0 21px 0 var(--light-2), 8px 0 0 var(--light-1), 8px 21px 0 var(--light-1), 16px 0 0 var(--light-2), 16px 21px 0 var(--light-2);
+        }
+
+        55%, 65% {
+            box-shadow: inset 0 0 0 2px var(--light-2), 0 21px 0 var(--light-2), 8px 0 0 var(--light-2), 8px 21px 0 var(--light-2), 16px 0 0 var(--light-1), 16px 21px 0 var(--light-1);
+        }
+
+        90%, 100% {
+            box-shadow: inset 0 0 0 2px var(--light-1), 0 21px 0 var(--light-1), 8px 0 0 var(--light-2), 8px 21px 0 var(--light-2), 16px 0 0 var(--light-2), 16px 21px 0 var(--light-2);
+        }
+        }
+
+        @keyframes clouds2 {
+        97% {
+            transform: translateX(-72px);
+            visibility: visible;
+        }
+
+        98%, 100% {
+            visibility: hidden;
+        }
+
+        99% {
+            transform: translateX(-72px);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.507);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .skill-bar {
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .typewriter {
+            text-wrap: wrap;
+            overflow: hidden;
+            border-right: .15em solid blue;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: blue; }
+        }
+    </style>
+</head>
+<body class="bg-primary-50 text-gray-800 dark:bg-dark-900 dark:text-gray-200 font-sans transition-colors duration-300">
+    <!-- Header -->
+    <header class="fixed light:bg-light-200 w-full z-50 glass-effect shadow-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-br from-primary-500 to-purple-600 rounded-lg"></div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">MNK</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Home</a>
+                    <a href="#about" class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">About</a>
+                    <a href="#projects" class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Projects</a>
+                    <a href="#contact" class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Contact</a>
+                    <a href="#resume" class="px-4 py-2 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all duration-300">
+                        Resume
+                    </a>
+
+                </div>
+                <div class="flex items-center gap-4">
+                <!-- From Uiverse.io by Nawsome --> 
+                <label class="plane-switch">
+                    <input type="checkbox" id="themeToggle">
+                    <div>
+                        <div>
+                            <svg viewBox="0 0 13 13">
+                                <path d="M1.55989957,5.41666667 L5.51582215,5.41666667 L4.47015462,0.108333333 L4.47015462,0.108333333 C4.47015462,0.0634601974 4.49708054,0.0249592654 4.5354546,0.00851337035 L4.57707145,0 L5.36229752,0 C5.43359776,0 5.50087375,0.028779451 5.55026392,0.0782711996 L5.59317877,0.134368264 L7.13659662,2.81558333 L8.29565964,2.81666667 C8.53185377,2.81666667 8.72332694,3.01067661 8.72332694,3.25 C8.72332694,3.48932339 8.53185377,3.68333333 8.29565964,3.68333333 L7.63589819,3.68225 L8.63450135,5.41666667 L11.9308317,5.41666667 C12.5213171,5.41666667 13,5.90169152 13,6.5 C13,7.09830848 12.5213171,7.58333333 11.9308317,7.58333333 L8.63450135,7.58333333 L7.63589819,9.31666667 L8.29565964,9.31666667 C8.53185377,9.31666667 8.72332694,9.51067661 8.72332694,9.75 C8.72332694,9.98932339 8.53185377,10.1833333 8.29565964,10.1833333 L7.13659662,10.1833333 L5.59317877,12.8656317 C5.55725264,12.9280353 5.49882018,12.9724157 5.43174295,12.9907056 L5.36229752,13 L4.57707145,13 L4.55610333,12.9978962 C4.51267695,12.9890959 4.48069792,12.9547924 4.47230803,12.9134397 L4.47223088,12.8704208 L5.51582215,7.58333333 L1.55989957,7.58333333 L0.891288881,8.55114605 C0.853775374,8.60544678 0.798421006,8.64327676 0.73629202,8.65879796 L0.672314689,8.66666667 L0.106844414,8.66666667 L0.0715243949,8.66058466 L0.0715243949,8.66058466 C0.0297243066,8.6457608 0.00275502199,8.60729104 0,8.5651586 L0.00593007386,8.52254537 L0.580855011,6.85813984 C0.64492547,6.67265611 0.6577034,6.47392717 0.619193545,6.28316421 L0.580694768,6.14191703 L0.00601851064,4.48064746 C0.00203480725,4.4691314 0,4.45701613 0,4.44481314 C0,4.39994001 0.0269259152,4.36143908 0.0652999725,4.34499318 L0.106916826,4.33647981 L0.672546853,4.33647981 C0.737865848,4.33647981 0.80011301,4.36066329 0.848265401,4.40322477 L0.89131128,4.45169723 L1.55989957,5.41666667 Z" fill="currentColor"></path>
+                            </svg>
+                        </div>
+                        <span class="street-middle"></span>
+                        <span class="cloud"></span>
+                        <span class="cloud two"></span>
+                    </div>
+                </label>
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden" title="Mobile Menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                </div>
+            </div>
+            
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 space-y-4 pb-4">
+                <a href="#home" class="block text-xl font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Home</a>
+                <a href="#about" class="block font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">About</a>
+                <a href="#projects" class="block font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Projects</a>
+                <a href="#contact" class="block font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Contact</a>
+                <a href="#resume" class="block px-4 py-2 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-lg text-center">Resume</a>
+            </div>
+
+            
+        </nav>
+        
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="h-full pt-36 md:pt-48 pb-20 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <!-- Left Content -->
+                <div class="lg:w-1/2 animate-fade-in">
+                    <div class="mb-4">
+                        <span class="px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-medium">
+                            Hello! I'm
+                        </span>
+                    </div>
+                    
+                    <h1 class="text-5xl font-mono md:text-7xl font-bold mb-6">
+                        <span class="block gradient-text">Madalitso</span>
+                        <span class="block text-dark-800 dark:text-white mt-2 typewriter w-fit">Newton Kalulu </span>
+                    </h1>
+                    
+                    <div class="mb-8">
+                        <div class="group">
+                            <h2 class="text-2xl md:text-3xl font-semibold mb-2">
+                                Web Developer
+                                <span class="hidden group-hover:inline"> 🕸️</span>
+                            </h2>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 text-lg">
+                            UI & UX Designer
+                        </p>
+                    </div>
+                    
+                    <p class="text-gray-600 dark:text-gray-300 text-lg mb-8 max-w-2xl">
+                        Computer Systems and Security student with a passion for creating functional, 
+                        visually appealing web solutions. I transform ideas into exceptional digital experiences.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 font-semibold">
+                            Get In Touch
+                        </a>
+                        <a href="#projects" class="px-8 py-3 border-2 border-primary-600 hover:shadow-xl transform hover:-translate-y-1 text-primary-600 dark:text-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors font-semibold">
+                            View Projects
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-8 border-white dark:border-dark-800 shadow-2xl">
+                            <img src="images/profile-pic.webp" alt="Madalitso Newton Kalulu" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-br from-primary-400 to-purple-500 rounded-2xl -z-10 animate-float"></div>
+                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full -z-10 animate-float" style="animation-delay: 2s;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-white dark:bg-dark-800">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+                    Passionate developer with expertise in modern web technologies and user-centered design
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Education -->
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-graduation-cap text-primary-600 mr-3"></i>
+                        Education
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-gray-50 dark:bg-dark-700 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                            <div class="flex justify-between items-start mb-3">
+                                <a href="https://www.mu.ac.mw/" target="_blank" class="text-primary-600 dark:text-primary-400 hover:underline" rel="noopener noreferrer">
+                                    <h4 class="font-semibold text-lg">Malawi University of Science & Technology</h4>
+                                </a>
+                                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm rounded-full">2024 - Present</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400">Bachelor's in Computer Systems and Security</p>
+                        </div>
+
+                        <div class="bg-gray-50 dark:bg-dark-700 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                            <div class="flex justify-between items-start mb-3">
+                                <h4 class="font-semibold text-lg">Certifications</h4>
+                                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full">2023-2025</span>
+                            </div>
+                            <ul class="text-gray-600 dark:text-gray-400 space-y-2">
+                                <li>• Responsive Web Design - <a href = "https://freecodecamp.org/certification/fccbc52e6d7-bf98-4b5d-8618-c46c2dee8036/responsive-web-design" class="text-primary-600 hover:underline" target="_blank" rel="noopener" title="freeCodeCamp">freeCodeCamp</a></li>
+                                <li>• SEO Certification - <a href="https://simpli-web.app.link/e/6XqoOVDu9Yb" class="text-primary-600 hover:underline" target="_blank" rel="noopener" >Simplilearn</a></li>
+                                <li>• Figma UI/UX Design - <a href="ude.my/UC-18cdb3b3-b905-4568-bbf9-b03fef963d04" class="text-primary-600 hover:underline" target="_blank" rel="noopener">Udemy</a></li>
+                                <li>• Computer Engineering - <a href="" class="text-primary-600 hover:underline">ABMA</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-code text-primary-600 mr-3"></i>
+                        Skills & Expertise
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Technical Skills -->
+                        <div>
+                            <h4 class="font-semibold mb-4 text-lg">Technical Skills</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span>HTML/CSS</span>
+                                        <span class="text-primary-600 font-semibold">90%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 dark:bg-dark-600 rounded-full overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-primary-500 to-purple-500 skill-bar" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span>JavaScript</span>
+                                        <span class="text-primary-600 font-semibold">80%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 dark:bg-dark-600 rounded-full overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-primary-500 to-purple-500 skill-bar" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span>Java</span>
+                                        <span class="text-primary-600 font-semibold">75%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 dark:bg-dark-600 rounded-full overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-primary-500 to-purple-500 skill-bar" style="width: 75%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Services -->
+                        <div>
+                            <h4 class="font-semibold mb-4 text-lg">Services</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-gray-50 dark:bg-dark-700 p-4 rounded-lg text-center hover:shadow-lg transition-shadow">
+                                    <i class="fas fa-paint-brush text-primary-600 text-2xl mb-2"></i>
+                                    <h5 class="font-semibold">Web Design</h5>
+                                </div>
+                                <div class="bg-gray-50 dark:bg-dark-700 p-4 rounded-lg text-center hover:shadow-lg transition-shadow">
+                                    <i class="fas fa-laptop-code text-primary-600 text-2xl mb-2"></i>
+                                    <h5 class="font-semibold">Frontend Dev</h5>
+                                </div>
+                                <div class="bg-gray-50 dark:bg-dark-700 p-4 rounded-lg text-center hover:shadow-lg transition-shadow">
+                                    <i class="fas fa-search text-primary-600 text-2xl mb-2"></i>
+                                    <h5 class="font-semibold">SEO</h5>
+                                </div>
+                                <div class="bg-gray-50 dark:bg-dark-700 p-4 rounded-lg text-center hover:shadow-lg transition-shadow">
+                                    <i class="fas fa-shield-alt text-primary-600 text-2xl mb-2"></i>
+                                    <h5 class="font-semibold">Cybersecurity</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Featured Projects</h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+                    Explore my latest work across different domains of technology
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Web Design -->
+                <a href="webdesigning.html" class="group">
+                    <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 text-white h-full transform group-hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
+                        <div class="mb-6">
+                            <i class="fas fa-palette text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Web Design</h3>
+                        <p class="opacity-90 mb-6">Modern, responsive websites with exceptional user experiences</p>
+                        <div class="flex items-center text-sm opacity-80">
+                            <span>View Projects</span>
+                            <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Cybersecurity -->
+                <a href="cybersecurity.html" class="group">
+                    <div class="bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl p-8 text-white h-full transform group-hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
+                        <div class="mb-6">
+                            <i class="fas fa-shield-alt text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Cybersecurity</h3>
+                        <p class="opacity-90 mb-6">Security solutions and vulnerability assessments</p>
+                        <div class="flex items-center text-sm opacity-80">
+                            <span>Explore Security</span>
+                            <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Java -->
+                <a href="java.html" class="group">
+                    <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-8 text-white h-full transform group-hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
+                        <div class="mb-6">
+                            <i class="fab fa-java text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Java Applications</h3>
+                        <p class="opacity-90 mb-6">Robust backend systems and desktop applications</p>
+                        <div class="flex items-center text-sm opacity-80">
+                            <span>See Applications</span>
+                            <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-20 px-6 bg-[url(images/still-life-books-versus-technology.webp)] bg-cover bg-fixed">
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto glass-effect rounded-3xl p-8 md:p-12 shadow-xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4">Download My <span class="text-blue-500">Professional Resume</span></h2>
+                    <p class="text-gray-600 dark:text-gray-400">Get my complete professional profile</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-purple-600 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-file-pdf text-3xl text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">Professional Resume</h3>
+                                <p class="text-gray-600 dark:text-gray-400">PDF Format</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="text-center p-4 bg-white dark:bg-dark-700 rounded-xl">
+                                <i class="fas fa-code text-primary-600 text-2xl mb-2"></i>
+                                <p class="font-semibold">1+ Years Experience</p>
+                            </div>
+                            <div class="text-center p-4 bg-white dark:bg-dark-700 rounded-xl">
+                                <i class="fas fa-project-diagram text-primary-600 text-2xl mb-2"></i>
+                                <p class="font-semibold">4+ Projects</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 text-center md:text-right">
+                        <a  href=""
+                        <buttton  
+                            class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 font-semibold text-lg cursor-cell">
+                            <i class="fas fa-download mr-3"></i>
+                            Download Resume
+                            </buttton>
+                        
+                        <p class="text-gray-600 dark:text-gray-400 mt-4 text-sm">Updated: December 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Get In <span class="text-primary-600">Touch</span> <span class="text-secondary-600">👋</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+                    Have a project in mind<span class="text-primary-600">❓</span> Let's discuss how we can work together
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Form -->
+                <div class="bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-xl">
+                    <form action="https://formspree.io/f/xrbapoyo" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-xl font-medium mb-2">Full Name <span class="text-primary-600">*</span></label>
+                            <input type="text" id="name" name="name" required 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-dark-600 bg-transparent focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-xl font-medium mb-2">Email Address <span class="text-primary-600">*</span></label>
+                            <input type="email" id="email" name="_replyto" required 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-dark-600 bg-transparent focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-xl  font-medium mb-2">Your Message <span class="text-primary-600">*</span></label>
+                            <textarea id="message" name="message" rows="5" required 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-dark-600 bg-transparent focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition"></textarea>
+                        </div>
+
+                        <button type="submit" 
+                            class="w-full px-8 py-4 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 font-semibold">
+                            Send Message
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-8">
+                            Feel free to reach out for collaborations, opportunities, or just to say hello!
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-envelope text-primary-600 hover:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <a href="mailto: newtonkalulu00@gmail.com">
+                                <p class="text-gray-600 dark:text-gray-400 hover:text-blue-400">newtonkalulu00@gmail.com</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-phone text-primary-600 hover:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Phone</p>
+                                <a href="tel:+265996893890">
+                                <p class="text-gray-600 dark:text-gray-400 hover:text-blue-400">+265 996 893 890</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-primary-600 hover:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Location</p>
+                                <a href="https://www.google.com/maps/place/Blantyre/@-15.7834036,34.9931339,12z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-15.7834036!4d34.9931339" target="_blank" rel="noopener">
+                                <p class="text-gray-600 dark:text-gray-400 hover:text-blue-400">Blantyre, Malawi</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold mb-4">Connect with me</h4>
+                        <div class="flex w-full mx-auto flex-wrap gap-5">
+                            <a href="https://github.com/blue1529" target="_blank" 
+                                class="w-16 h-16 bg-gray-100 dark:bg-dark-700 rounded-xl flex items-center justify-center hover:bg-primary-100 dark:hover:bg-primary-900/30 transition-colors"
+                                rel="noopener" title="GitHub">
+                                <i class="fab fa-github text-5xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/madalitso-kalulu-b09a0531a/" target="_blank"
+                                class="w-16 h-16 bg-gray-100 dark:bg-dark-700 rounded-xl flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
+                                rel="noopener" title="LinkedIn">
+                                <i class="fab fa-linkedin-in text-5xl text-blue-600"></i>
+                            </a>
+                            <a href="https://wa.me/265996893890" target="_blank"
+                                class="w-16 h-16 bg-gray-100 dark:bg-dark-700 rounded-xl flex items-center justify-center hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors"
+                                rel="noopener" title="WhatsApp">
+                                <i class="fab fa-whatsapp text-5xl text-green-600"></i>
+                            </a>
+                            <a href="https://t.me/madalitso_kalulu" target="_blank"
+                                class="w-16 h-16 bg-gray-100 dark:bg-dark-700 rounded-xl flex items-center justify-center hover:bg-cyan-100 dark:hover:bg-cyan-900/30 transition-colors"
+                                rel="noopener" title="Telegram">
+                                <i class="fab fa-telegram text-5xl text-cyan-600"></i>
+                            </a>
+                            <a href="https://www.instagram.com/madalitso_kalulu/" target="_blank"
+                                class="w-16 h-16 bg-gray-100 dark:bg-dark-700 rounded-xl flex items-center justify-center hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-colors"
+                                rel="noopener" title="Instagram">
+                                <i class="fab fa-instagram text-5xl text-pink-600"></i>
+                            </a>
+                            <a href="https://www.facebook.com/madalitso.kalulu" target="_blank"
+                                class="w-16 h-16 bg-gray-100 dark:bg-dark-700 rounded-xl flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
+                                rel="noopener" title="Facebook">
+                                <i class="fab fa-facebook text-5xl text-blue-600"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 border-t border-gray-200 dark:border-dark-700">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-600 dark:text-gray-400">
+                        © 2025 Madalitso Newton Kalulu. All rights reserved.
+                    </p>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="privacy%20policy.html" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                        Privacy Policy
+                    </a>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-gray-500">@madak</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top"
+          title="Back to Top"
+            class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 opacity-0 invisible group">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+
+
+        //Resume download button
+        document.getElementById('downloadPortfolioBtn').addEventListener('click', function() {
+    const btn = this;
+    const originalText = btn.innerHTML;
+    
+    // Disable button to prevent multiple clicks
+    btn.disabled = true;
+    btn.innerHTML = '🔄 Preparing download...';
+    
+    // Get your GitHub username and repo name
+    const githubUsername = 'blue1529'; 
+    const repoName = 'My-Portfolio'; 
+    const pdfFilename = 'my-portfolio';
+    
+    // Construct the direct download URL
+    const downloadUrl = `https://raw.githubusercontent.com/${githubUsername}/${repoName}/assets/portfolio/${pdfFilename}`;
+    
+    // Create a temporary download link
+    const tempLink = document.createElement('a');
+    tempLink.href = downloadUrl;
+    tempLink.download = 'My_Portfolio.pdf'; // What users will see as filename
+    tempLink.target = '_blank';
+    tempLink.rel = 'noopener noreferrer';
+    
+    // Add to page, click, then remove
+    document.body.appendChild(tempLink);
+    tempLink.click();
+    document.body.removeChild(tempLink);
+    
+    // Button feedback
+    btn.innerHTML = '✅ Download started!';
+    setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    }, 3000);
+});
+
+//Theme toggle
+// Theme toggle - Fixed version
+const themeToggle = document.getElementById('themeToggle');
+const htmlElement = document.documentElement;
+
+// Check for saved theme or system preference
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// Set initial theme
+if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    enableDarkMode();
+    themeToggle.checked = true; // Check the checkbox for dark mode
+} else {
+    enableLightMode();
+    themeToggle.checked = false; // Uncheck for light mode
+}
+
+// Toggle theme on button click
+themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
+        enableDarkMode();
+    } else {
+        enableLightMode();
+    }
+});
+
+function enableDarkMode() {
+    htmlElement.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+}
+
+function enableLightMode() {
+    htmlElement.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+}
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+        if (e.matches) {
+            enableDarkMode();
+            themeToggle.checked = true;
+        } else {
+            enableLightMode();
+            themeToggle.checked = false;
+        }
+    }
+});
+    </script>
+</body>
+</html>

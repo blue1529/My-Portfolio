@@ -1,0 +1,3 @@
+*.pdf binary
+*.pdf linguist-vendored
+/assets/pdfs/*.pdf linguist-vendored

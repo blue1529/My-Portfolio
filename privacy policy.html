@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Madalitso Newton Kalulu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'mono': ['Source Code Pro', 'monospace'],
+                    },
+                    typography: {
+                        DEFAULT: {
+                            css: {
+                                maxWidth: 'none',
+                                color: '#334155',
+                                a: {
+                                    color: '#2563eb',
+                                    '&:hover': {
+                                        color: '#1d4ed8',
+                                    },
+                                },
+                            },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-border {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .section-border::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+        }
+        
+        .policy-card {
+            transition: all 0.3s ease;
+        }
+        
+        .policy-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-button {
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            transform: translateX(-4px);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-blue-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <header class="mb-12">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+                <div>
+                    <a href="index.html" class="inline-flex items-center space-x-2 text-primary-600 hover:text-primary-700 back-button">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        <span class="font-medium">Back to Portfolio</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
+                    <span class="text-sm text-gray-600 font-mono">Last Updated: 2 November 2025</span>
+                </div>
+            </div>
+            
+            <div class="text-center mb-10">
+                <div class="inline-block mb-6">
+                    <span class="px-4 py-2 rounded-full bg-blue-100 text-blue-600 text-sm font-semibold">
+                        <i class="fas fa-shield-alt mr-2"></i>Privacy Policy
+                    </span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="gradient-text">Privacy</span>
+                    <span class="block text-dark-800">Policy & Data Protection</span>
+                </h1>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    How I collect, use, and protect your information on my portfolio website
+                </p>
+            </div>
+        </header>
+
+        <!-- Introduction Card -->
+        <div class="policy-card bg-white rounded-2xl p-8 mb-8 shadow-lg"> 
+            <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-info-circle text-white text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold mb-3">Welcome</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        This privacy policy explains how I handle information on my personal portfolio website 
+                        (<strong class="text-primary-600"><a href="https://newtonkalulu.vercel.app/" target="_blank" rel="noopener noreferrer">newtonkalulu.vercel.app</a></strong>). I value your privacy and 
+                        designed this website to minimize data collection while providing transparency about any analytics used.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="space-y-8">
+            <!-- Section 1 -->
+            <div class="policy-card bg-white rounded-xl p-8 shadow-md">
+                <div class="section-border pl-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mr-4">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800">Information Collected</h2>
+                    </div>
+                    
+                    <div class="ml-14 space-y-4">
+                        <p class="text-gray-700 leading-relaxed">
+                            This website does not collect personally identifiable information such as names, emails, or IP addresses.
+                            I use <a href="https://umami.is" target="_blank" rel="noopener" class="text-primary-600 hover:text-primary-700 font-medium">Umami Analytics</a> 
+                            for privacy-friendly analytics that respect visitor privacy.
+                        </p>
+                        
+                        <div class="bg-gray-50 rounded-lg p-6 mt-4">
+                            <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                                <i class="fas fa-chart-bar text-blue-500 mr-2"></i>
+                                Non-personal data collected:
+                            </h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                    <span>Pages visited and time spent on each page</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                    <span>Referring websites (where visitors came from)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                    <span>Browser type and operating system</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                    <span>Device type (desktop, tablet, or mobile)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                    <span>Approximate region or country (no precise location)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 border border-blue-100 rounded-lg p-4 mt-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-shield-alt text-blue-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <p class="text-sm text-blue-800">
+                                    <strong>Important:</strong> All data is completely anonymized and cannot be used to identify individual visitors.
+                                    No cookies or personal identifiers are stored.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="policy-card bg-white rounded-xl p-8 shadow-md">
+                <div class="section-border pl-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mr-4">
+                            <span class="font-bold">2</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800">Use of Information</h2>
+                    </div>
+                    
+                    <div class="ml-14">
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            The analytics information collected is used solely for improving the website experience:
+                        </p>
+                        
+                        <div class="grid md:grid-cols-3 gap-4 mt-6">
+                            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-5 text-center">
+                                <div class="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h4 class="font-semibold mb-2">Performance Monitoring</h4>
+                                <p class="text-sm text-gray-600">Track site performance and user engagement</p>
+                            </div>
+                            
+                            <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-5 text-center">
+                                <div class="w-12 h-12 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <h4 class="font-semibold mb-2">Content Improvement</h4>
+                                <p class="text-sm text-gray-600">Enhance content and design based on usage</p>
+                            </div>
+                            
+                            <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-5 text-center">
+                                <div class="w-12 h-12 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-bug"></i>
+                                </div>
+                                <h4 class="font-semibold mb-2">Technical Maintenance</h4>
+                                <p class="text-sm text-gray-600">Detect and fix potential technical issues</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="policy-card bg-white rounded-xl p-8 shadow-md">
+                <div class="section-border pl-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mr-4">
+                            <span class="font-bold">3</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800">Cookies & Tracking</h2>
+                    </div>
+                    
+                    <div class="ml-14">
+                        <div class="flex items-start p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl mb-4">
+                            <i class="fas fa-cookie-bite text-green-500 text-xl mt-1 mr-4 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">No Cookies Used</h4>
+                                <p class="text-gray-700">
+                                    This website does not use cookies to track or store any information about you.
+                                    The analytics platform (Umami) does not use cookies or store personal data.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="policy-card bg-white rounded-xl p-8 shadow-md">
+                <div class="section-border pl-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mr-4">
+                            <span class="font-bold">4</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800">Data Sharing & Storage</h2>
+                    </div>
+                    
+                    <div class="ml-14 space-y-4">
+                        <div class="flex items-start p-4 bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl">
+                            <i class="fas fa-ban text-orange-500 text-xl mt-1 mr-4 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">No Data Sharing</h4>
+                                <p class="text-gray-700">
+                                    I do not sell, share, or rent any visitor data to third parties.
+                                    All analytics data is stored securely and accessible only to me.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl">
+                            <i class="fas fa-database text-blue-500 text-xl mt-1 mr-4 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Secure Data Storage</h4>
+                                <p class="text-gray-700">
+                                    Analytics data is hosted securely on servers managed by 
+                                    <span class="font-medium">Vercel</span> and 
+                                    <span class="font-medium">Neon Database</span> through my Umami deployment.
+                                    No raw IP addresses or personal identifiers are stored.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="policy-card bg-white rounded-xl p-8 shadow-md">
+                <div class="section-border pl-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-red-100 text-red-600 flex items-center justify-center mr-4">
+                            <span class="font-bold">5</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800">Your Rights & External Links</h2>
+                    </div>
+                    
+                    <div class="ml-14 space-y-6">
+                        <div>
+                            <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                                <i class="fas fa-user-shield text-red-500 mr-2"></i>
+                                Your Privacy Rights
+                            </h3>
+                            <p class="text-gray-700 mb-3">
+                                Because this site does not store personal data, there are no user accounts or 
+                                identifiable records to modify or delete. However, if you have privacy concerns, 
+                                I will respond promptly and transparently.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-5">
+                            <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                                <i class="fas fa-external-link-alt text-red-500 mr-2"></i>
+                                External Website Links
+                            </h3>
+                            <p class="text-gray-700 mb-3">
+                                My portfolio may contain links to external websites (GitHub, LinkedIn, Formspree, etc.).
+                                I am not responsible for the content or privacy practices of those external sites.
+                            </p>
+                            <div class="bg-white rounded-lg p-4 mt-3">
+                                <p class="text-sm text-gray-600 font-medium">
+                                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                                    You are encouraged to review the privacy policies of any external sites you visit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6 -->
+            <div class="policy-card bg-white rounded-xl p-8 shadow-md">
+                <div class="section-border pl-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mr-4">
+                            <span class="font-bold">6</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800">Policy Updates & Contact</h2>
+                    </div>
+                    
+                    <div class="ml-14 space-y-6">
+                        <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-5">
+                            <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                                <i class="fas fa-sync-alt text-indigo-500 mr-2"></i>
+                                Policy Updates
+                            </h3>
+                            <p class="text-gray-700">
+                                I may update this policy periodically to reflect changes in tools, hosting, or analytics services.
+                                Updates will be posted on this page with a new "Last Updated" date.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-5">
+                            <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                                <i class="fas fa-envelope text-blue-500 mr-2"></i>
+                                Contact Information
+                            </h3>
+                            <p class="text-gray-700 mb-4">
+                                If you have any questions about this Privacy Policy, you can reach me at:
+                            </p>
+                            <a href="mailto:newtonkalulu00@gmail.com" 
+                               class="inline-flex items-center space-x-3 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all">
+                                <i class="fas fa-paper-plane"></i>
+                                <span class="font-semibold">newtonkalulu00@gmail.com</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 pt-8 border-t border-gray-200">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-purple-500"></div>
+                        <span class="font-bold text-gray-800">Madalitso Newton Kalulu</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-2">Web Developer & Cybersecurity Student</p>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <span class="text-sm text-gray-500 font-mono">
+                        Version 1.1 • Last Updated: 2 Nov 2025
+                    </span>
+                    <a href="index.html" class="text-primary-600 hover:text-primary-700 font-medium">
+                        Return to Portfolio
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+    <script>
+        // Add smooth scrolling to all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add hover effect to policy cards
+        document.querySelectorAll('.policy-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+                card.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.1)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '';
+            });
+        });
+
+        // Update current year in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            const yearElements = document.querySelectorAll('.current-year');
+            yearElements.forEach(el => {
+                el.textContent = currentYear;
+            });
+        });
+    </script>
+</body>
+</html>

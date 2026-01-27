@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Coming Soon | Java Projects</title>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        java: {
+                            500: '#007396',
+                            600: '#005580',
+                            700: '#003d5c',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'typewriter': 'typewriter 2s steps(40) 1s 1 normal both',
+                        'blink': 'blink 0.8s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        typewriter: {
+                            from: { width: '0' },
+                            to: { width: '100%' },
+                        },
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+        
+        .java-gradient {
+            background: linear-gradient(135deg, #007396 0%, #f89820 50%, #ed8b00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .typewriter-text {
+            overflow: hidden;
+            border-right: .15em solid #007396;
+            white-space: nowrap;
+            letter-spacing: .15em;
+            animation: typewriter 3s steps(40) 1s 1 normal both,
+                     blink .75s step-end infinite;
+        }
+        
+        .code-block {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-gray-950 text-gray-100 min-h-screen">
+    <!-- Header -->
+    <header class="relative z-50">
+        <div class="container mx-auto px-6 py-6">
+            <a href="index.html" class="inline-flex items-center space-x-3 text-gray-300 hover:text-white transition-colors duration-300 group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-java-500 to-orange-500 flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <div>
+                    <span class="font-semibold">Back to Portfolio</span>
+                    <p class="text-xs text-gray-400">Java Projects Section</p>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative min-h-[80vh] flex items-center justify-center px-4">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-java-500/10 to-transparent rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-tr from-orange-500/5 to-transparent rounded-full blur-3xl"></div>
+            
+            <!-- Code Background -->
+            <div class="absolute inset-0 opacity-10">
+                <div class="container mx-auto px-4 py-8 max-w-4xl code-block text-sm">
+                    <pre class="whitespace-pre-wrap">
+<span class="text-java-400">public class</span> <span class="text-orange-400">JavaProjects</span> {
+    <span class="text-java-400">private</span> <span class="text-purple-400">List</span>&lt;<span class="text-orange-400">Project</span>&gt; projects;
+    
+    <span class="text-java-400">public</span> <span class="text-orange-400">JavaProjects</span>() {
+        projects = <span class="text-java-400">new</span> <span class="text-orange-400">ArrayList</span>&lt;&gt;();
+        <span class="text-gray-500">// Loading amazing projects...</span>
+    }
+    
+    <span class="text-java-400">public void</span> <span class="text-blue-400">displayProjects</span>() {
+        <span class="text-java-400">for</span> (<span class="text-orange-400">Project</span> p : projects) {
+            System.out.println(p);
+        }
+    }
+}</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center max-w-4xl mx-auto">
+            <!-- Animated Java Logo -->
+            <div class="mb-8 animate-float">
+                <div class="w-32 h-32 mx-auto bg-gradient-to-br from-java-600 to-orange-500 rounded-2xl flex items-center justify-center shadow-2xl">
+                    <i class="fab fa-java text-6xl"></i>
+                </div>
+            </div>
+            
+            <!-- Main Heading -->
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                <span class="java-gradient">Java Projects</span>
+                <span class="block mt-4">Coming Soon</span>
+            </h1>
+            
+            <!-- Typewriter Text -->
+            <div class="mb-8">
+                <div class="typewriter-text text-xl md:text-2xl text-gray-300 inline-block">
+                    Building something amazing...
+                </div>
+            </div>
+            
+            <!-- Description -->
+            <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+                I'm currently developing a collection of Java applications, from desktop utilities 
+                to backend systems. Each project showcases my skills in object-oriented programming, 
+                algorithms, and software architecture.
+            </p>
+            
+            <!-- Progress Indicator -->
+            <div class="max-w-md mx-auto mb-12">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-400">Development Progress</span>
+                    <span class="text-sm text-java-400 font-mono">75%</span>
+                </div>
+                <div class="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-java-500 to-orange-500 rounded-full" style="width: 75%;"></div>
+                </div>
+            </div>
+            
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-java-500/50 transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-java-900/50 text-java-400 flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-laptop-code text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Desktop Applications</h3>
+                    <p class="text-sm text-gray-400">GUI-based programs using Java Swing & JavaFX</p>
+                </div>
+                
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-orange-500/50 transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-orange-900/50 text-orange-400 flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-server text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Backend Systems</h3>
+                    <p class="text-sm text-gray-400">Server-side applications and APIs</p>
+                </div>
+                
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-purple-500/50 transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-purple-900/50 text-purple-400 flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-brain text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Algorithms</h3>
+                    <p class="text-sm text-gray-400">Data structures and algorithm implementations</p>
+                </div>
+            </div>
+            
+            <!-- Countdown / Status -->
+            <div class="inline-flex items-center space-x-4 px-6 py-3 bg-gray-800/50 rounded-full border border-gray-700">
+                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                <span class="text-sm text-gray-300 font-mono">IN ACTIVE DEVELOPMENT</span>
+            </div>
+            
+            <!-- Back Button -->
+            <div class="mt-12">
+                <a href="index.html#projects" 
+                   class="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-java-600 to-orange-500 text-white rounded-xl hover:shadow-2xl transition-all duration-300 group">
+                    <i class="fas fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+                    <span class="font-semibold">View Other Projects</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 py-8 px-6 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-500 font-mono text-sm">
+                        <i class="fas fa-code text-java-400 mr-2"></i>
+                        Java Development Portfolio
+                    </p>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <span class="text-gray-500 text-sm font-mono">
+                        ESTIMATED LAUNCH: Q1 2025
+                    </span>
+                    <a href="index.html" class="text-java-400 hover:text-orange-400 font-medium">
+                        Return to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Add typing effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const typewriter = document.querySelector('.typewriter-text');
+            
+            // Reset animation for demonstration
+            typewriter.style.animation = 'none';
+            setTimeout(() => {
+                typewriter.style.animation = 'typewriter 3s steps(40) 1s 1 normal both, blink .75s step-end infinite';
+            }, 100);
+            
+            // Add hover effect to feature cards
+            document.querySelectorAll('.bg-gray-800\\/50').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-4px)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Animate progress bar
+            const progressBar = document.querySelector('.h-full');
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 75) {
+                    clearInterval(interval);
+                    return;
+                }
+                width++;
+                progressBar.style.width = width + '%';
+            }, 30);
+        });
+    </script>
+</body>
+</html>
