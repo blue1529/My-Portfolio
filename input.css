@@ -1,17 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Cal+Sans:ital,wght@0,400..700;1,400..700&display=swap');
-
-
 @import "tailwindcss";
 
 /* 1. Enable class-based dark mode */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* 4. Add your Marvin Visions font-face rules */
 @font-face {
     font-family: 'Marvin Visions';
-    src: url('styles/fonts/MarvinVisions.woff2') format('woff2'),url('styles/fonts/MarvinVisions-Bold.woff') format('woff');
+    src: url('/styles/fonts/MarvinVisions-Regular.woff2') format('woff2'),
+         url('/styles/fonts/MarvinVisions-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Marvin Visions';
+    src: url('/styles/fonts/MarvinVisions-Bold.woff2') format('woff2'),
+         url('/styles/fonts/MarvinVisions-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
+
+/* 5. (Optional) Apply Marvin Visions to a CSS variable for easy use */
+@theme {
+  --font-mono: 'Marvin Visions', 'Inter', sans-serif;
+}
+
 /* 2. Extend the theme with your customizations */
 @theme {
   /* Define your custom primary color scale */
@@ -54,7 +68,6 @@
   /* Define your custom font families */
   --sans: 'Inter', system-ui, sans-serif;
   --display: 'Cal Sans', 'Inter', sans-serif;
-  --font-title: 'Marvin Visions', 'Inter', sans-serif[citation:4];
 
   /* Define your custom animations */
   --animate-float: float 6s ease-in-out infinite;

@@ -1,11 +1,42 @@
         // Show the popup when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            // Show popup after a brief delay (you can remove this delay if you want)
-            setTimeout(function() {
-                document.getElementById('redirectPopup').style.display = 'flex';
-            }, 500); // 0.5 second delay
-        });
+// Show the popup 5 seconds after page loads
+document.addEventListener('DOMContentLoaded', function() {
+    let countdown = 5;
+    const countdownElement = document.getElementById('countdown-number');
+    const countdownContainer = document.getElementById('popup-countdown');
+    const redirectPopup = document.getElementById('redirectPopup');
+    let countdownInterval;
+    
+    // Only show countdown if elements exist
+    if (countdownContainer && countdownElement) {
+        countdownContainer.classList.remove('hidden');
         
+        countdownInterval = setInterval(function() {
+            countdown--;
+            countdownElement.textContent = countdown;
+            
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                countdownContainer.classList.add('hidden');
+            }
+        }, 1000);
+    }
+    
+    // Show popup after 5 seconds
+    setTimeout(function() {
+        if (countdownInterval) {
+            clearInterval(countdownInterval);
+        }
+        if (countdownContainer) {
+            countdownContainer.classList.add('hidden');
+        }
+        if (redirectPopup) {
+            redirectPopup.style.display = 'flex';
+        }
+    }, 5000); // 5 seconds
+});
+
+
         // Function to redirect user
         function redirectUser() {
             // ⚠️ CHANGE THIS URL TO YOUR DESIRED DESTINATION ⚠️
