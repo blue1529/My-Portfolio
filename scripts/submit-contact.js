@@ -142,8 +142,7 @@ async function handleSubmit(event) {
         // Insert into Supabase
         const { data, error } = await supabaseClient
             .from('contact_submissions')
-            .insert([formData])
-            .select();
+            .insert([formData]);
         
         if (error) {
             console.error('Supabase insert error:', error);
@@ -204,29 +203,27 @@ function showError(message) {
     }, 10000);
 }
 
-// Send notification (simplified version - customize as needed)
+// Send notification
 async function sendNotification(formData) {
     try {
-        // Simple console notification
-        console.log('📬 New Contact Form Submission:');
-        console.log('👤 Name:', formData.name);
-        console.log('📧 Email:', formData.email);
-        console.log('💬 Message:', formData.message.substring(0, 100) + '...');
-        console.log('🌐 IP:', formData.user_ip);
-        console.log('🕐 Time:', new Date().toLocaleString());
-        
-        // You can add your notification service here
-        // Example: EmailJS, Pushover, Twilio, etc.
-        
-        return true;
+        const topic = 'portfolio-alerts';
+        const message = `📧 New Contact: ${formData.name}\n📩 From: ${formData.email}\n💬 ${formData.message.substring(0, 100)}...`;
+
+        fetch(`https://ntfy.sh/${topic}`, {
+            method: 'POST',
+            body: message,
+            headers: {
+                'Title': 'New Form Submission', 
+                'Priority': 'urgent'
+            }
+        });
+        console.log('ntfy.sh notification sent');
     } catch (error) {
-        console.error('Notification failed:', error);
-        // Don't fail the form submission if notification fails
-        return false;
+        console.error('ntfy.sh notification failed:', error);
     }
 }
 
-// Add this to window for debugging (optional)
+//debugging window
 if (typeof window !== 'undefined') {
     window.contactFormDebug = {
         testConnection: async function() {
@@ -246,26 +243,4 @@ if (typeof window !== 'undefined') {
             };
         }
     };
-}
-
-// Example using Pushover (recommended)
-async function sendPushoverNotification(formData) {
-    const pushoverData = {
-        token: 'YOUR_APP_TOKEN', // From pushover.net
-        user: 'YOUR_USER_KEY',   // From pushover.net
-        title: '📬 New Contact Form Submission',
-        message: `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message.substring(0, 100)}...`,
-        url: 'https://supabase.com/dashboard/project/YOUR_PROJECT/editor/table/contact_submissions',
-        priority: 0
-    };
-    
-    try {
-        await fetch('https://api.pushover.net/1/messages.json', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(pushoverData)
-        });
-    } catch (error) {
-        console.error('Push notification error:', error);
-    }
 }

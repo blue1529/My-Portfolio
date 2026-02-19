@@ -110,8 +110,8 @@
                                     </div>
                                     <select id="service" name="service" class="form-select max-w-full pl-10 pr-4 py-3 border-2 border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
                                         <option value="Static Website" data-price="400" class="text-sm">Static Website - $400+</option>
-                                        <option value="PHP Business Site" data-price="1000" class=" text-sm">PHP Business Site - $1,000+</option>
-                                        <option value="Custom PHP Site" data-price="1500" class=" text-sm">Custom PHP Site - $1,500+</option>
+                                        <option value="PHP Business Site" data-price="800" class=" text-sm">PHP Business Site - $800+</option>
+                                        <option value="Custom PHP Site" data-price="1200" class=" text-sm">Custom PHP Site - $1,200+</option>
                                     </select>
                                 </div>
                                 
@@ -157,19 +157,20 @@
                                         <span class="text-red-500">*</span> Email Address
                                     </label>
                                     <input type="email" id="email" name="email" required 
-                                           class="form-input w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
-                                           placeholder="john@example.com">
+                                        class="form-input w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
+                                        placeholder="john@example.com">
                                 </div>
                             </div>
                             
                             <div>
                                 <label for="phone" class="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     <i class="fas fa-phone mr-2"></i>
-                                    Phone Number (Optional)
+                                    <span class="text-red-500">*</span> Phone Number
                                 </label>
                                 <input type="tel" id="phone" name="phone" 
-                                       class="form-input w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
-                                       placeholder="+265996893890">
+                                    class="form-input w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
+                                    placeholder="+26599123456"
+                                    required>
                             </div>
                         </div>
 
@@ -181,14 +182,16 @@
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">Project Details</h3>
                             </div>
-                            
+                            <!-- Project Description --> 
                             <div>
                                 <label for="description" class="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     <span class="text-red-500">*</span> Project Description
                                 </label>
-                                <textarea id="description" name="description" rows="6" required 
-                                          class="form-textarea w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
-                                          placeholder="Describe your vision, goals, target audience, and any specific features you need..."></textarea>
+                                    <textarea id="description" name="description" rows="6" required 
+                                        class="form-textarea w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
+                                        placeholder="Describe your vision, goals, target audience, and any specific features you need..."
+                                        >
+                                    </textarea>
                                 <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
                                     <i class="fas fa-lightbulb mr-1"></i> Be as detailed as possible for the most accurate quote
                                 </p>
@@ -212,8 +215,8 @@
                                             Preferred Color Scheme
                                         </label>
                                         <input type="text" id="colors" name="colors" 
-                                               class="form-input w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
-                                               placeholder="e.g., Blue and white, Dark theme">
+                                            class="form-input w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
+                                            placeholder="e.g., Blue and white, Dark theme">
                                     </div>
                                     <div>
                                         <label for="timeline" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
@@ -253,15 +256,15 @@
                                         Special Features Needed
                                     </label>
                                     <textarea id="features" name="features" rows="3" 
-                                              class="form-textarea w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
-                                              placeholder="e.g., E-commerce, User login, Blog, Admin panel, etc."></textarea>
+                                        class="form-textarea w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
+                                        placeholder="e.g., E-commerce, User login, Blog, Admin panel, etc."></textarea>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Submit Button -->
                         <div class="text-center pt-6">
-                            <button type="submit" class="group px-12 py-4 bg-gradient-to-r from-primary-600 via-purple-600 to-secondary-600 text-white rounded-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 font-semibold text-lg cursor-pointer shadow-lg hover:shadow-xl">
+                            <button type="submit" class="group px-12 py-4 bg-gradient-to-r from-primary-600 via-purple-600 to-secondary-600 text-white rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 font-semibold text-lg cursor-pointer ">
                                 <i class="fas fa-paper-plane mr-3 group-hover:rotate-12 transition-transform"></i>
                                 Submit Quote Request
                                 <i class="fas fa-arrow-right ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all"></i>
@@ -292,7 +295,7 @@
                                 <div class="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center group-hover:scale-110 transition-transform">
                                     <i class="fab fa-whatsapp text-3xl"></i>
                                 </div>
-                                <span class="font-bold text-lg">WhatsApp</span>
+                                <span class="font-bold text-lg">WhatsApp</span><span class="text-sm text-gray-600 dark:text-gray-400"> (Recommended)</span> 
                                 <span class="text-sm text-gray-600 dark:text-gray-400">Instant messaging</span>
                             </button>
                             <button id="telegramBtn" class="p-6 bg-white dark:bg-gray-900 border-2 border-blue-200 dark:border-blue-800 text-blue-800 dark:text-blue-300 rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center space-y-3 group">

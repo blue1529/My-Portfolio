@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.2.0 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -358,7 +358,7 @@
     top: calc(var(--spacing) * 0);
   }
   .top-1\/4 {
-    top: calc(1/4 * 100%);
+    top: calc(1 / 4 * 100%);
   }
   .top-4 {
     top: calc(var(--spacing) * 4);
@@ -376,7 +376,7 @@
     right: calc(var(--spacing) * 1);
   }
   .right-1\/4 {
-    right: calc(1/4 * 100%);
+    right: calc(1 / 4 * 100%);
   }
   .right-8 {
     right: calc(var(--spacing) * 8);
@@ -391,7 +391,7 @@
     bottom: calc(var(--spacing) * 0);
   }
   .bottom-1\/4 {
-    bottom: calc(1/4 * 100%);
+    bottom: calc(1 / 4 * 100%);
   }
   .bottom-8 {
     bottom: calc(var(--spacing) * 8);
@@ -409,10 +409,10 @@
     left: calc(var(--spacing) * 1);
   }
   .left-1\/2 {
-    left: calc(1/2 * 100%);
+    left: calc(1 / 2 * 100%);
   }
   .left-1\/4 {
-    left: calc(1/4 * 100%);
+    left: calc(1 / 4 * 100%);
   }
   .left-4 {
     left: calc(var(--spacing) * 4);
@@ -516,6 +516,9 @@
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
   }
+  .ml-4 {
+    margin-left: calc(var(--spacing) * 4);
+  }
   .ml-14 {
     margin-left: calc(var(--spacing) * 14);
   }
@@ -541,7 +544,7 @@
     height: calc(var(--spacing) * 1);
   }
   .h-1\/4 {
-    height: calc(1/4 * 100%);
+    height: calc(1 / 4 * 100%);
   }
   .h-2 {
     height: calc(var(--spacing) * 2);
@@ -601,7 +604,7 @@
     min-height: 100vh;
   }
   .w-1\/4 {
-    width: calc(1/4 * 100%);
+    width: calc(1 / 4 * 100%);
   }
   .w-2 {
     width: calc(var(--spacing) * 2);
@@ -679,7 +682,7 @@
     flex-shrink: 0;
   }
   .-translate-x-1\/2 {
-    --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+    --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-y-1 {
@@ -840,6 +843,9 @@
   }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .overflow-x-hidden {
+    overflow-x: hidden;
   }
   .scroll-smooth {
     scroll-behavior: smooth;
@@ -2517,12 +2523,12 @@
   }
   .lg\:w-1\/2 {
     @media (width >= 64rem) {
-      width: calc(1/2 * 100%);
+      width: calc(1 / 2 * 100%);
     }
   }
   .lg\:w-2\/3 {
     @media (width >= 64rem) {
-      width: calc(2/3 * 100%);
+      width: calc(2 / 3 * 100%);
     }
   }
   .lg\:w-96 {
@@ -3184,15 +3190,8 @@
 }
 @font-face {
   font-family: 'Marvin Visions';
-  src: url('/styles/fonts/MarvinVisions-Regular.woff2') format('woff2'), url('/styles/fonts/MarvinVisions-Regular.woff') format('woff');
+  src: url('/styles/fonts/MarvinVisions-Bold.eot') format('eot'), url('/styles/fonts/MarvinVisions-Bold.woff') format('woff'), url('/styles/fonts/MarvinVisions-Bold.woff2') format('woff2');
   font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Marvin Visions';
-  src: url('/styles/fonts/MarvinVisions-Bold.woff2') format('woff2'), url('/styles/fonts/MarvinVisions-Bold.woff') format('woff');
-  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }

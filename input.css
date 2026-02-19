@@ -6,17 +6,10 @@
 /* 4. Add your Marvin Visions font-face rules */
 @font-face {
     font-family: 'Marvin Visions';
-    src: url('/styles/fonts/MarvinVisions-Regular.woff2') format('woff2'),
-         url('/styles/fonts/MarvinVisions-Regular.woff') format('woff');
+  src: url('/styles/fonts/MarvinVisions-Bold.eot') format('eot'),
+        url('/styles/fonts/MarvinVisions-Bold.woff') format('woff'),
+        url('/styles/fonts/MarvinVisions-Bold.woff2') format('woff2');
     font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Marvin Visions';
-    src: url('/styles/fonts/MarvinVisions-Bold.woff2') format('woff2'),
-         url('/styles/fonts/MarvinVisions-Bold.woff') format('woff');
-    font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
